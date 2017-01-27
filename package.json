@@ -1,0 +1,26 @@
+{
+  "name": "mission.seed",
+  "version": "1.0.0",
+  "description": "mission.io's Seed project",
+  "main": "index.js",
+  "scripts": {
+    "prebuild": "rimraf build",
+    "build": "tsc",
+    "prepublish": "tsc"
+  },
+  "keywords": [
+    "mission",
+    "typescript",
+    "mission"
+  ],
+  "author": {
+    "name": "Natarajan Ganapathi",
+    "email": "natarajanmca11@gmail.com",
+    "url": "www.linkedin.com/in/natarajanganapathi"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "connect-redis": "^3.2.0",
+    "mission.core": "0.0.1-alpha.3"
+  }
+}

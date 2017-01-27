@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "preserveConstEnums": true,
+        "rootDir": "./src/",
+        "outDir": "./build/",
+        "sourceMap": false,
+        "declaration": false
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
