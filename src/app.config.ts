@@ -33,7 +33,7 @@ export const Config = {
     /************* Elasticsearch  config **************/
 
     /************* Log  config **************/
-    LOG_FOLDER_PATH: './Logs/',
+    LOG_FOLDER_PATH: './logs/',
     STARTUP_LOG_LEVEL: 'error',
     EXCEPTION_LOG_LEVEL: 'error',
     SQL_LOG_LEVEL: 'error',

@@ -30,7 +30,7 @@ export const LoggerConfig: {
                     level: 'info',
                     colorize: true,
                     timestamp: true,
-                    json: false
+                    json: true
                 },
                 DailyRotateFile: {
                     filename: 'exception.log',

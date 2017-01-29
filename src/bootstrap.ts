@@ -1,5 +1,5 @@
 import { WebServer, Request, Response, NextFunction, WebServerConfig, LoggerInstance } from 'mission.core';
-//import { AppRouter } from './Server/Router';
+import { AppRouter } from './modules/routes';
 import { ApiResponse, IBaseDto } from 'mission.common';
 
 export class Bootstrap {
@@ -19,7 +19,7 @@ export class Bootstrap {
         server.init();
         server.addStaticFileRouting(this.config.webBasePath, __dirname + this.config.webBasePath, this.config.staticFileConfig);
         server.addStaticFileRouting(this.config.docsBasepath, __dirname + this.config.docsBasepath, this.config.staticFileConfig);
-        //server.addApiRouting('/', AppRouter);
+        server.addApiRouting('/', AppRouter);
         this.Server = server;
         return this.Server;
     }

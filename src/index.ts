@@ -1,15 +1,18 @@
-import 'app.global';
+import './app.global';
+import { Config } from './app.config';
+App.Config = Config;
+
 import { LoggerFactory, Repository, MongoRepo } from 'mission.core';
 import { ApiRequest, Paginator } from 'mission.common';
 import { Bootstrap } from './bootstrap';
-import { DbConfig, WebConfig } from './config';
-import { Config } from './app.config';
+import { DbConfig, WebConfig, LoggerConfig } from './config';
+import { join } from 'path';
+let modelPattern = join(__dirname, 'modules', '**/*.model.js');
 
-var logger = LoggerFactory.getLogger([{ 'console': {} }]);
+var logger = LoggerFactory.getLogger(LoggerConfig.ExceptionLoggerConfig);
 Paginator.init(Config.DEFAULT_PAGE_SIZE);
-Repository.init(DbConfig, '', logger);
+Repository.init(DbConfig, modelPattern, logger);
 MongoRepo.init({}, logger); //async api
-App.Config = Config;
 App.Models = Repository.getInstance().Models;
 
 new Bootstrap(WebConfig).init(logger).start();
