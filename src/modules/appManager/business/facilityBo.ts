@@ -7,27 +7,27 @@ import { FacilityFilter } from '../Common';
 @BoRegister
 export class FacilityBo extends BaseBo<FacilityInstance, FacilityAttributes> {
     public async AddFacility(req: BaseRequest): Promise<ApiResponse<number>> {
-        let result = await super.Save(req.data);
-        return super.GetResponse(result.dataValues.Id);
+        let result = await super.save(req.data);
+        return super.getResponse(result.dataValues.Id);
     }
 
     public async UpdateFacility(req: BaseRequest): Promise<ApiResponse<number>> {
-        let result = await super.Update(req.data);
-        return super.GetResponse(result.dataValues.Id);
+        let result = await super.update(req.data);
+        return super.getResponse(result.dataValues.Id);
     }
 
     public async GetFacilities(apiReq?: ApiRequest<FacilityFilter>): Promise<ApiResponse<FacilityAttributes[]>> {
-        super.QOBuilder.include(apiReq.includes, (include) => AppIncludes[include.key]);
-        super.QOBuilder.where(apiReq.filters, key => FacilityFilter[key]);
-        let result = await super.FindAll(super.QOBuilder.findOptions);
-        return super.GetResponse(super.GetAttributes(result), apiReq.pageContext);
+        super.qoBuilder.include(apiReq.includes, (include) => AppIncludes[include.key]);
+        super.qoBuilder.where(apiReq.filters, key => FacilityFilter[key]);
+        let result = await super.findAll(super.qoBuilder.findOptions);
+        return super.getResponse(super.getAttributes(result), apiReq.pageContext);
     }
 
     public async DeleteFacility(req: BaseRequest): Promise<ApiResponse<Boolean>> {
-        return super.GetResponse(await super.MarkAsDelete(req.id));
+        return super.getResponse(await super.markAsDelete(req.id));
     }
 
-    public GetModel(): SStatic.Model<FacilityInstance, FacilityAttributes> {
+    public getModel(): SStatic.Model<FacilityInstance, FacilityAttributes> {
         return App.Models.Facility;
     }
 }

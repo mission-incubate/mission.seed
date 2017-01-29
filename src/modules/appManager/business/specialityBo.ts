@@ -7,27 +7,27 @@ import { SpecialityFilter } from '../Common';
 @BoRegister
 export class SpecialityBo extends BaseBo<SpecialityInstance, SpecialityAttributes> {
     public async AddSpeciality(req: BaseRequest): Promise<ApiResponse<number>> {
-        let result = await super.Save(req.data);
-        return super.GetResponse(result.dataValues.Id);
+        let result = await super.save(req.data);
+        return super.getResponse(result.dataValues.Id);
     }
 
     public async UpdateSpeciality(req: BaseRequest): Promise<ApiResponse<number>> {
-        let result = await super.Update(req.data);
-        return super.GetResponse(result.dataValues.Id);
+        let result = await super.update(req.data);
+        return super.getResponse(result.dataValues.Id);
     }
 
     public async GetSpecialities(apiReq?: ApiRequest<SpecialityFilter>): Promise<ApiResponse<SpecialityAttributes[]>> {
-        super.QOBuilder.include(apiReq.includes, (include) => AppIncludes[include.key]);
-        super.QOBuilder.where(apiReq.filters, key => SpecialityFilter[key]);
-        let result = await super.FindAll(super.QOBuilder.findOptions);
-        return super.GetResponse(super.GetAttributes(result), apiReq.pageContext);
+        super.qoBuilder.include(apiReq.includes, (include) => AppIncludes[include.key]);
+        super.qoBuilder.where(apiReq.filters, key => SpecialityFilter[key]);
+        let result = await super.findAll(super.qoBuilder.findOptions);
+        return super.getResponse(super.getAttributes(result), apiReq.pageContext);
     }
 
     public async DeleteSpeciality(req: BaseRequest): Promise<ApiResponse<Boolean>> {
-        return super.GetResponse(await super.MarkAsDelete(req.id));
+        return super.getResponse(await super.markAsDelete(req.id));
     }
 
-    public GetModel(): SStatic.Model<SpecialityInstance, SpecialityAttributes> {
+    public getModel(): SStatic.Model<SpecialityInstance, SpecialityAttributes> {
         return App.Models.Speciality;
     }
 }

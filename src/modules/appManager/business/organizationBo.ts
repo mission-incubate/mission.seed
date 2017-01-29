@@ -7,27 +7,27 @@ import { OrganizationFilter } from '../common';
 @BoRegister
 export class OrganizationBo extends BaseBo<OrganizationInstance, OrganizationAttributes> {
     public async AddOrganization(req: BaseRequest): Promise<ApiResponse<number>> {
-        let result = await super.Save(req.data);
-        return super.GetResponse(result.dataValues.Id);
+        let result = await super.save(req.data);
+        return super.getResponse(result.dataValues.Id);
     }
 
     public async UpdateOrganization(req: BaseRequest): Promise<ApiResponse<number>> {
-        let result = await super.Update(req.data);
-        return super.GetResponse(result.dataValues.Id);
+        let result = await super.update(req.data);
+        return super.getResponse(result.dataValues.Id);
     }
 
     public async GetOrganizations(apiReq?: ApiRequest<OrganizationFilter>): Promise<ApiResponse<OrganizationAttributes[]>> {
-        super.QOBuilder.include(apiReq.includes, (include) => AppIncludes[include.key]);
-        super.QOBuilder.where(apiReq.filters, key => OrganizationFilter[key]);
-        let result = await super.FindAll(super.QOBuilder.findOptions);
-        return super.GetResponse(super.GetAttributes(result), apiReq.pageContext);
+        super.qoBuilder.include(apiReq.includes, (include) => AppIncludes[include.key]);
+        super.qoBuilder.where(apiReq.filters, key => OrganizationFilter[key]);
+        let result = await super.findAll(super.qoBuilder.findOptions);
+        return super.getResponse(super.getAttributes(result), apiReq.pageContext);
     }
 
     public async DeleteOrganization(req: BaseRequest): Promise<ApiResponse<Boolean>> {
-        return super.GetResponse(await super.MarkAsDelete(req.id));
+        return super.getResponse(await super.markAsDelete(req.id));
     }
 
-    public GetModel(): SStatic.Model<OrganizationInstance, OrganizationAttributes> {
+    public getModel(): SStatic.Model<OrganizationInstance, OrganizationAttributes> {
         return App.Models.Organization;
     }
 }
