@@ -26,7 +26,6 @@ interface AppSettings {
     CACHE_PROVIDER: string;
     /************* Redis config **************/
     REDIS_HOST_NAME: string;
-    REDIS_AUTH: string;
     REDIS_PORT: number;
     REDIS_SSH_PORT: number;
     /************* Session config **************/

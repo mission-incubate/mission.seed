@@ -21,6 +21,9 @@
   "license": "MIT",
   "dependencies": {
     "connect-redis": "^3.2.0",
-    "mission.core": "0.0.1-alpha.4"
+    "mission.core": "0.0.1-alpha.5"
+  },
+  "devDependencies": {
+    "@types/connect-redis": "0.0.5"
   }
 }

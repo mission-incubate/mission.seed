@@ -12,8 +12,8 @@ let modelPattern = join(__dirname, 'modules', '**/*.model.js');
 var logger = LoggerFactory.getLogger(LoggerConfig.ExceptionLoggerConfig);
 Paginator.init(Config.DEFAULT_PAGE_SIZE);
 Repository.init(DbConfig, modelPattern, logger);
-MongoRepo.init({}, logger); //async api
-App.Models = Repository.getInstance().Models;
+//MongoRepo.init({}, logger); //async api
+App.Models = Repository.Instance.Models;
 
 new Bootstrap(WebConfig).init(logger).start();
 

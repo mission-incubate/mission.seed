@@ -15,7 +15,6 @@ export const Config = {
     DATABASE_PORT: 3306,
     /************* Redis config **************/
     REDIS_HOST_NAME: 'localhost',
-    REDIS_AUTH: '',
     REDIS_PORT: 6379,
     REDIS_SSH_PORT: 22,
     /************* Cache config **************/

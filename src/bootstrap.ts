@@ -8,12 +8,13 @@ export class Bootstrap {
     public init(logger: LoggerInstance): WebServer {
         let server = new WebServer(this.config, logger, logger);
         server.errorHandler = (err: Error, req: Request, res: Response, next: NextFunction): void => {
+            let msg = typeof err === 'string' ? err : err.message;
             var out: ApiResponse<IBaseDto> = {
                 data: null,
                 pageContext: null,
-                error: { code: null, message: err.message, stack: process.env.NODE_ENV === 'development' ? err.stack : null }
+                error: { code: null, message: msg, stack: process.env.NODE_ENV === 'development' ? err.stack : null }
             };
-            logger.error(err.message, err.stack);
+            logger.error(msg, err.stack);
             res.status(404).json(out);
         };
         server.init();
