@@ -1,6 +1,8 @@
+interface Models { }
+
 declare var App: {
     Config?: AppSettings;
-    DefaultPageSize?: number;
+    Models?: Models
 }
 
 interface AppSettings {

@@ -6,7 +6,8 @@
         "rootDir": "./src/",
         "outDir": "./build/",
         "sourceMap": false,
-        "declaration": false
+        "declaration": false,
+        "experimentalDecorators": true
     },
     "exclude": [
         "node_modules"
