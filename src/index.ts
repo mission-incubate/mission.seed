@@ -2,8 +2,8 @@ import './app.global';
 import { Config } from './app.config';
 App.Config = Config;
 
-import { LoggerFactory, Repository, MongoRepo } from 'mission.core';
-import { ApiRequest, Paginator } from 'mission.common';
+import { LoggerFactory, Repository } from 'mission.core';
+import { Paginator } from 'mission.common';
 import { Bootstrap } from './bootstrap';
 import { DbConfig, WebConfig, LoggerConfig } from './config';
 import { join } from 'path';
@@ -16,4 +16,3 @@ Repository.init(DbConfig, modelPattern, logger);
 App.Models = Repository.Instance.Models;
 
 new Bootstrap(WebConfig).init(logger).start();
-

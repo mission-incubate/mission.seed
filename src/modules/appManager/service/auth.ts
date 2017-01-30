@@ -18,20 +18,21 @@ passport.deserializeUser((user: any, done: Function) => {
     done(null, user);
 });
 
-passport.use(new local.Strategy({ usernameField: 'UserName', passwordField: 'Password' }, (userName, password, done) => {
-    const userBo = BoFactory.GetBo(UserBo);
-    userBo.FindOne({ where: { UserName: userName }, attributes: ['Id', 'UserName', 'Password'] })
-        .then((user) => {
-            if (!user || !user.dataValues || user.dataValues.Password !== password) {
-                return done(null, false);
-            }
-            let value = user.dataValues;
-            return done(null, {
-                UserId: value.Id,
-                UserName: value.UserName
-            });
-        }).catch((err) => done(err, { UserName: userName }, { message: 'Can not find the user' }));
-}));
+passport.use(new local.Strategy({ usernameField: 'UserName', passwordField: 'Password' },
+    (userName: string, password: string, done: Function) => {
+        const userBo = BoFactory.getBo(UserBo);
+        userBo.findOne({ where: { UserName: userName }, attributes: ['Id', 'UserName', 'Password'] })
+            .then((user) => {
+                if (!user || !user.dataValues || user.dataValues.Password !== password) {
+                    return done(null, false);
+                }
+                let value = user.dataValues;
+                return done(null, {
+                    UserId: value.Id,
+                    UserName: value.UserName
+                });
+            }).catch((err) => done(err, { UserName: userName }, { message: 'Can not find the user' }));
+    }));
 
 class Auth {
     public static async Login(req: Request, res: Response, next: NextFunction): Promise<void> {

@@ -56,7 +56,7 @@ export const RedisSessionConfig: RedisStoreOptions = {
     host: App.Config.REDIS_HOST_NAME,
     port: App.Config.REDIS_PORT,
     db: 0
-}
+};
 // export const CachePolicy: CachingPolicyDict = {
 //     Default: <ICachingPolicy>{
 //         expire: 0

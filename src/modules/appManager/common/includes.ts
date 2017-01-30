@@ -1,4 +1,4 @@
-import { IncludeOptions, Repository, AppIncludes, _ } from 'mission.core';
+import { IncludeOptions, AppIncludes, _ } from 'mission.core';
 
 const AppManagerIncludes: { [key: string]: IncludeOptions } = {
     'User': {

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "prebuild": "rimraf build",
-    "build": "tsc",
+    "lint": "tslint src/**/*.ts",
+    "build": "npm run lint && tsc",
     "prepublish": "tsc"
   },
   "keywords": [
@@ -20,8 +21,9 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@types/passport-local": "^1.0.29",
     "connect-redis": "^3.2.0",
-    "mission.core": "0.0.1-alpha.5"
+    "mission.core": "0.0.1-alpha.8"
   },
   "devDependencies": {
     "@types/connect-redis": "0.0.5"

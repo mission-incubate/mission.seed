@@ -12,4 +12,4 @@ export const DbConfig: DatabaseConfig = {
         force: true,
         timezone: '+12:00'
     }
-}
+};
