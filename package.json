@@ -23,7 +23,7 @@
   "dependencies": {
     "@types/passport-local": "^1.0.29",
     "connect-redis": "^3.2.0",
-    "mission.core": "0.0.1-alpha.8"
+    "mission.core": "0.0.1-alpha.10"
   },
   "devDependencies": {
     "@types/connect-redis": "0.0.5"

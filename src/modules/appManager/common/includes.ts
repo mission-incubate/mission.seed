@@ -1,6 +1,6 @@
 import { IncludeOptions, AppIncludes, _ } from 'mission.core';
 
-const AppManagerIncludes: { [key: string]: IncludeOptions } = {
+export const AppManagerIncludes: { [key: string]: IncludeOptions } = {
     'User': {
         model: App.Models.User,
         where: null,
@@ -16,7 +16,7 @@ const AppManagerIncludes: { [key: string]: IncludeOptions } = {
     'Organization': {
         model: App.Models.Organization,
         where: null,
-        attributes: []
+        attributes: ['Id', 'OrgCode', 'OrgName']
         /*'Id', 'OrgCode', 'OrgName', 'AddressLine1', 'AddressLine2', 'PinCode', 'Area', 'City', 'State', 'Country',
          'OrgStatusId', 'ActiveFrom', 'ActiveTo', 'IsBeds', 'IsDoctors', 'IsFacility', 'BedsCount', 'DoctorsCount',
           'FacilityCount', 'LicenseActiveFrom', 'LicenseActiveTo', 'OrgLogo', 'Status', 'Rev', 'CreatedBy', 'CreatedAt',
@@ -25,7 +25,7 @@ const AppManagerIncludes: { [key: string]: IncludeOptions } = {
     'Facility': {
         model: App.Models.Facility,
         where: null,
-        attributes: []
+        attributes: ['Id', 'FacilityCode', 'FacilityName']
         /*'Id', 'OrganizationId', 'FacilityCode', 'FacilityName', 'FacilityTypeId', 'Description', 'AddressLine1', 'AddressLine2',
          'PinCode', 'Area', 'City', 'State', 'Country', 'LandLine', 'FaxNo', 'Email', 'LanguageId', 'ActiveFrom', 'ActiveTo',
           'IsGstRegistered', 'GstNumber', 'RegistrationNo', 'TaxActiveFrom', 'TaxActiveTo', 'Status', 'Rev', 'CreatedBy',

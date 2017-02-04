@@ -2,7 +2,8 @@ interface Models { }
 
 declare var App: {
     Config?: AppSettings;
-    Models?: Models
+    Models?: Models;
+    Includes?: { [key: string]: any }
 }
 
 interface AppSettings {

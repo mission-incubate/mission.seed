@@ -1,5 +1,5 @@
 import * as SStatic from 'sequelize';
-import { BaseBo, BoRegister, AppIncludes } from 'mission.core';
+import { BaseBo, BoRegister } from 'mission.core';
 import { BaseRequest, ApiRequest, ApiResponse } from 'mission.common';
 import { UserInstance, UserAttributes } from '../Model/Interface';
 import { UserFilter } from '../Common';
@@ -17,7 +17,7 @@ export class UserBo extends BaseBo<UserInstance, UserAttributes> {
     }
 
     public async GetUsers(apiReq?: ApiRequest<UserFilter>): Promise<ApiResponse<UserAttributes[]>> {
-        super.qoBuilder.include(apiReq.includes, (include) => AppIncludes[include.key]);
+        super.qoBuilder.include(apiReq.includes, (include) => App.Includes[include.key]);
         super.qoBuilder.where(apiReq.filters, key => UserFilter[key]);
         let result = await super.findAll(super.qoBuilder.findOptions);
         return super.getResponse(super.getAttributes(result), apiReq.pageContext);
@@ -32,7 +32,7 @@ export class UserBo extends BaseBo<UserInstance, UserAttributes> {
     }
 
     public async GetParams(apiReq?: ApiRequest<UserFilter>): Promise<any> {
-        super.qoBuilder.include(apiReq.includes, (include) => AppIncludes[include.key]);
+        super.qoBuilder.include(apiReq.includes, (include) => App.Includes[include.key]);
         super.qoBuilder.where(apiReq.filters, key => UserFilter[key]);
         return super.qoBuilder.findOptions;
     }
