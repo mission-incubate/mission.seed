@@ -61,11 +61,11 @@ export default function (sequelize: Sequelize, DataTypes: DataTypes):
             indexes: [],
             classMethods: {
                 associate: (models: Models): void => {
-                    User.belongsTo(models.Organization, { as: 'Org', foreignKey: 'Id' });
-                    User.belongsTo(models.Facility, { as: 'Facility', foreignKey: 'Id' });
-                    User.belongsTo(models.Department, { as: 'Dept', foreignKey: 'Id' });
-                    User.belongsTo(models.Department, { as: 'SubDept', foreignKey: 'Id' });
-                    User.belongsTo(models.Speciality, { as: 'Speciality', foreignKey: 'Id' });
+                    User.belongsTo(models.Organization);
+                    User.belongsTo(models.Facility);
+                    User.belongsTo(models.Department);
+                    User.belongsTo(models.Department);
+                    User.belongsTo(models.Speciality);
                 }
             },
             timestamps: true,
