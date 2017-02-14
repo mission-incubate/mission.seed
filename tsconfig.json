@@ -3,12 +3,12 @@
         "target": "es6",
         "module": "commonjs",
         "preserveConstEnums": true,
-        "rootDir": "./src/",
         "outDir": "./build/",
         "sourceMap": false,
         "declaration": false,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
+        "noLib": false,
         "pretty": true,
         "allowUnreachableCode": false,
         "allowUnusedLabels": false,
@@ -20,7 +20,17 @@
         "noUnusedLocals": true,
         "noUnusedParameters": false
     },
+    "typeRoots": [
+        "./node_modules/@types",
+        "./node_modules"
+    ],
+    "types": [
+        "node"
+    ],
     "exclude": [
-        "node_modules"
-    ]
+        "node_modules",
+        "build",
+        "gulpfile.ts"
+    ],
+    "compileOnSave": false
 }
