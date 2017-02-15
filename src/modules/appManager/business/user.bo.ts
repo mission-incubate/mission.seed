@@ -1,8 +1,8 @@
 import * as SStatic from 'sequelize';
 import { BaseBo, BoRegister } from 'mission.core';
 import { BaseRequest, ApiRequest, ApiResponse } from 'mission.common';
-import { UserInstance, UserAttributes } from '../Model/Interface';
-import { UserFilter } from '../Common';
+import { UserInstance, UserAttributes } from '../model/interface';
+import { UserFilter } from '../common';
 
 @BoRegister
 export class UserBo extends BaseBo<UserInstance, UserAttributes> {

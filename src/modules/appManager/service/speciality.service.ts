@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction, BoFactory, Routable } from 'mission.core';
 import { ApiResponse } from 'mission.common';
-import { SpecialityBo } from '../Business';
+import { SpecialityBo } from '../business';
 
 @Routable('/AppManager/Speciality')
 export class SpecialityService {

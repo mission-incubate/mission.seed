@@ -1,2 +1,2 @@
-export * from './Filters.enum';
-export * from './Includes';
+export * from './filters.enum';
+export * from './includes';

@@ -1,8 +1,8 @@
 import * as SStatic from 'sequelize';
 import { BaseBo, BoRegister, AppIncludes } from 'mission.core';
 import { BaseRequest, ApiRequest, ApiResponse } from 'mission.common';
-import { SpecialityInstance, SpecialityAttributes } from '../Model/Interface';
-import { SpecialityFilter } from '../Common';
+import { SpecialityInstance, SpecialityAttributes } from '../model/interface';
+import { SpecialityFilter } from '../common';
 
 @BoRegister
 export class SpecialityBo extends BaseBo<SpecialityInstance, SpecialityAttributes> {
