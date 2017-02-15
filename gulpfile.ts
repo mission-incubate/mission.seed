@@ -14,7 +14,8 @@ gulp.task('default', (done: any) => {
             force: true,
             timezone: '+12:00'
         }
-    }, '/Users/NatarajanG/BitBucket/mission/mission.tools/src/templates/module',
+    }, 'natarajan',
+        '/Users/NatarajanG/BitBucket/mission/mission.tools/src/templates/module',
         '/Users/NatarajanG/BitBucket/mission/mission.seed/src/modules',
         'AppManager', done);
 });
