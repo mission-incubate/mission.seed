@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction, BoFactory, Routable } from 'mission.core';
 import { ApiResponse } from 'mission.common';
-import { UserBo } from '../Business';
+import { UserBo } from '../business';
 
 @Routable('/AppManager/User')
 export class UserService {
