@@ -52,5 +52,4 @@ interface AppSettings {
     FALL_BACK_LOGGER_NAME: string;
     INSTRUMENTATION_LOGGER_NAME: string;
     SQL_QUERY_LOGGER_NAME: string;
-
 }

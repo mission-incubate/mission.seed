@@ -17,7 +17,7 @@ export class FacilityBo extends BaseBo<FacilityInstance, FacilityAttributes> {
     }
 
     public async GetFacilities(apiReq?: ApiRequest<FacilityFilter>): Promise<ApiResponse<FacilityAttributes[]>> {
-        super.qoBuilder.include(apiReq.includes, (include) => AppIncludes[include.key]);
+        super.qoBuilder.include(apiReq.includes, (include) => AppIncludes.Instance[include.key]);
         super.qoBuilder.where(apiReq.filters, key => FacilityFilter[key]);
         let result = await super.findAll(super.qoBuilder.findOptions);
         return super.getResponse(super.getAttributes(result), apiReq.pageContext);

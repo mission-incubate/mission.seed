@@ -1,4 +1,4 @@
-import { IncludeOptions, AppIncludes, _ } from 'mission.core';
+import { IncludeOptions, AppIncludes } from 'mission.core';
 
 export const AppManagerIncludes: { [key: string]: IncludeOptions } = {
     'User': {
@@ -48,4 +48,5 @@ export const AppManagerIncludes: { [key: string]: IncludeOptions } = {
          'IsActive', 'Status', 'Rev', 'CreatedBy', 'CreatedAt', 'UpdatedBy', 'UpdatedAt', */
     },
 };
-_.merge(AppIncludes, AppManagerIncludes);
+//_.merge(AppIncludes, AppManagerIncludes);
+AppIncludes.add(AppManagerIncludes);

@@ -17,7 +17,7 @@ export class DepartmentBo extends BaseBo<DepartmentInstance, DepartmentAttribute
     }
 
     public async GetDepartments(apiReq?: ApiRequest<DepartmentFilter>): Promise<ApiResponse<DepartmentAttributes[]>> {
-        super.qoBuilder.include(apiReq.includes, (include) => AppIncludes[include.key]);
+        super.qoBuilder.include(apiReq.includes, (include) => AppIncludes.Instance[include.key]);
         super.qoBuilder.where(apiReq.filters, key => DepartmentFilter[key]);
         let result = await super.findAll(super.qoBuilder.findOptions);
         return super.getResponse(super.getAttributes(result), apiReq.pageContext);

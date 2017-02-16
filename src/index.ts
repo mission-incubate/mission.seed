@@ -20,4 +20,3 @@ App.Includes = AppIncludes;
 
 import { Bootstrap } from './bootstrap';
 new Bootstrap(WebConfig).init(logger).start();
-
