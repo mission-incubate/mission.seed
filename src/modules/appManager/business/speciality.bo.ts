@@ -17,7 +17,7 @@ export class SpecialityBo extends BaseBo<SpecialityInstance, SpecialityAttribute
     }
 
     public async GetSpecialities(apiReq?: ApiRequest<SpecialityFilter>): Promise<ApiResponse<SpecialityAttributes[]>> {
-        super.qoBuilder.include(apiReq.includes, (include) => AppIncludes[include.key]);
+        super.qoBuilder.include(apiReq.includes, (include) => AppIncludes.Instance[include.key]);
         super.qoBuilder.where(apiReq.filters, key => SpecialityFilter[key]);
         let result = await super.findAll(super.qoBuilder.findOptions);
         return super.getResponse(super.getAttributes(result), apiReq.pageContext);
