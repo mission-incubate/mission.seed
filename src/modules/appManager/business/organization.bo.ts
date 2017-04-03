@@ -8,12 +8,12 @@ import { OrganizationFilter } from '../common';
 export class OrganizationBo extends BaseBo<OrganizationInstance, OrganizationAttributes> {
     public async AddOrganization(req: BaseRequest): Promise<ApiResponse<number>> {
         let result = await super.save(req.data);
-        return super.getResponse(result.dataValues.Id);
+        return super.getResponse(result.dataValues.id);
     }
 
     public async UpdateOrganization(req: BaseRequest): Promise<ApiResponse<number>> {
         let result = await super.update(req.data);
-        return super.getResponse(result.dataValues.Id);
+        return super.getResponse(result.dataValues.id);
     }
 
     public async GetOrganizations(apiReq?: ApiRequest<OrganizationFilter>): Promise<ApiResponse<OrganizationAttributes[]>> {

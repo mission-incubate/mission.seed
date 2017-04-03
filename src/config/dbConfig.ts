@@ -10,6 +10,7 @@ export const DbConfig: DatabaseConfig = {
         dialect: App.Config.DATABASE_DIALECT,
         logging: console.warn,
         force: true,
-        timezone: '+12:00'
+        timezone: '+12:00',
+        benchmark: true
     }
 };

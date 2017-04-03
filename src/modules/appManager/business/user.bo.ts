@@ -8,12 +8,12 @@ import { UserFilter } from '../common';
 export class UserBo extends BaseBo<UserInstance, UserAttributes> {
     public async AddUser(req: BaseRequest): Promise<ApiResponse<number>> {
         let result = await super.save(req.data);
-        return super.getResponse(result.dataValues.Id);
+        return super.getResponse(result.dataValues.id);
     }
 
     public async UpdateUser(req: BaseRequest): Promise<ApiResponse<number>> {
         let result = await super.update(req.data);
-        return super.getResponse(result.dataValues.Id);
+        return super.getResponse(result.dataValues.id);
     }
 
     public async GetUsers(apiReq?: ApiRequest<UserFilter>): Promise<ApiResponse<UserAttributes[]>> {
