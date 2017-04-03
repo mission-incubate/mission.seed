@@ -8,12 +8,12 @@ import { SpecialityFilter } from '../common';
 export class SpecialityBo extends BaseBo<SpecialityInstance, SpecialityAttributes> {
     public async AddSpeciality(req: BaseRequest): Promise<ApiResponse<number>> {
         let result = await super.save(req.data);
-        return super.getResponse(result.dataValues.Id);
+        return super.getResponse(result.dataValues.id);
     }
 
     public async UpdateSpeciality(req: BaseRequest): Promise<ApiResponse<number>> {
         let result = await super.update(req.data);
-        return super.getResponse(result.dataValues.Id);
+        return super.getResponse(result.dataValues.id);
     }
 
     public async GetSpecialities(apiReq?: ApiRequest<SpecialityFilter>): Promise<ApiResponse<SpecialityAttributes[]>> {

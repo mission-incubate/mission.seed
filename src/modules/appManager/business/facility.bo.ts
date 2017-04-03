@@ -8,12 +8,12 @@ import { FacilityFilter } from '../common';
 export class FacilityBo extends BaseBo<FacilityInstance, FacilityAttributes> {
     public async AddFacility(req: BaseRequest): Promise<ApiResponse<number>> {
         let result = await super.save(req.data);
-        return super.getResponse(result.dataValues.Id);
+        return super.getResponse(result.dataValues.id);
     }
 
     public async UpdateFacility(req: BaseRequest): Promise<ApiResponse<number>> {
         let result = await super.update(req.data);
-        return super.getResponse(result.dataValues.Id);
+        return super.getResponse(result.dataValues.id);
     }
 
     public async GetFacilities(apiReq?: ApiRequest<FacilityFilter>): Promise<ApiResponse<FacilityAttributes[]>> {

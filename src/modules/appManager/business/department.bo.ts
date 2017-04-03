@@ -8,12 +8,12 @@ import { DepartmentFilter } from '../common';
 export class DepartmentBo extends BaseBo<DepartmentInstance, DepartmentAttributes> {
     public async AddDepartment(req: BaseRequest): Promise<ApiResponse<number>> {
         let result = await super.save(req.data);
-        return super.getResponse(result.dataValues.Id);
+        return super.getResponse(result.dataValues.id);
     }
 
     public async UpdateDepartment(req: BaseRequest): Promise<ApiResponse<number>> {
         let result = await super.update(req.data);
-        return super.getResponse(result.dataValues.Id);
+        return super.getResponse(result.dataValues.id);
     }
 
     public async GetDepartments(apiReq?: ApiRequest<DepartmentFilter>): Promise<ApiResponse<DepartmentAttributes[]>> {

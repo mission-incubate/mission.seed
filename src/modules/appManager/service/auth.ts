@@ -28,7 +28,7 @@ passport.use(new local.Strategy({ usernameField: 'UserName', passwordField: 'Pas
                 }
                 let value = user.dataValues;
                 return done(null, {
-                    UserId: value.Id,
+                    UserId: value.id,
                     UserName: value.UserName
                 });
             }).catch((err) => done(err, { UserName: userName }, { message: 'Can not find the user' }));
