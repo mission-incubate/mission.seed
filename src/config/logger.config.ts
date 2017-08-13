@@ -15,7 +15,7 @@ export const LoggerConfig: {
                 },
                 File: {
                     filename: 'startup.log',
-                    dirname: App.Config.LOG_FOLDER_PATH,
+                    dirname: process.env.LOG_FOLDER_PATH,
                     level: 'info',
                     handleExceptions: true,
                     timestamp: true,
@@ -34,7 +34,7 @@ export const LoggerConfig: {
                 },
                 DailyRotateFile: {
                     filename: 'exception.log',
-                    dirname: App.Config.LOG_FOLDER_PATH,
+                    dirname: process.env.LOG_FOLDER_PATH,
                     level: 'info',
                     handleExceptions: true,
                     timestamp: true,
@@ -53,7 +53,7 @@ export const LoggerConfig: {
                 },
                 File: {
                     filename: 'sql.log',
-                    dirname: App.Config.LOG_FOLDER_PATH,
+                    dirname: process.env.LOG_FOLDER_PATH,
                     level: 'info',
                     handleExceptions: true,
                     humanReadableUnhandledException: true,

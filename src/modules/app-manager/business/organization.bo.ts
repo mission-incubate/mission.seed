@@ -23,11 +23,14 @@ export class OrganizationBo extends BaseBo<OrganizationInstance, OrganizationAtt
         return super.getResponse(super.getAttributes(result), apiReq.pageContext);
     }
 
-    public async DeleteOrganization(req: BaseRequest): Promise<ApiResponse<Boolean>> {
+    public async DeleteOrganization(req: BaseRequest): Promise<ApiResponse<any>> {
+        if (!req.id) {
+            throw { name: 'NOID', message: 'Invalid Id' };
+        }
         return super.getResponse(await super.markAsDelete(req.id));
     }
 
     public getModel(): SStatic.Model<OrganizationInstance, OrganizationAttributes> {
-        return App.Models.Organization;
+        return super.models.Organization;
     }
 }

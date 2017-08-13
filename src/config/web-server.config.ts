@@ -1,10 +1,10 @@
 import { WebServerConfig } from 'mission.core';
 
 export const WebConfig: WebServerConfig = {
-    apiPort: App.Config.PORT,
-    isHttpsEnabled: !!App.Config.SSL_CERTIFICATE_PATH,
-    httpsCertificatepath: App.Config.SSL_CERTIFICATE_PATH,
-    httpsKeypath: App.Config.SSL_KEY_PATH,
+    apiPort: Number(process.env.PORT),
+    isHttpsEnabled: !!process.env.SSL_CERTIFICATE_PATH,
+    httpsCertificatepath: process.env.SSL_CERTIFICATE_PATH || '',
+    httpsKeypath: process.env.SSL_KEY_PATH || '',
     staticFileConfig: {
         dotfiles: 'ignore',
         etag: false,
@@ -24,6 +24,6 @@ export const WebConfig: WebServerConfig = {
         credentials: true,
         maxAge: 3600
     },
-    webBasePath: App.Config.WEB_APPLICATION_PATH,
-    docsBasepath: App.Config.API_DOCUMENT_PATH
+    webBasePath: process.env.WEB_APPLICATION_PATH || '',
+    docsBasepath: process.env.API_DOCUMENT_PATH || ''
 };

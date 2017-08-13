@@ -1,4 +1,4 @@
-import { BoFactory, Router, Request, Response, NextFunction, GetRouter, Wrap } from 'mission.core';
+import { BoFactory, Router, Request, Response, NextFunction, GetRouter, Wrap/*, Routable */ } from 'mission.core';
 import { UserBo } from '../business';
 import * as passport from 'passport';
 import * as local from 'passport-local';
@@ -34,7 +34,8 @@ passport.use(new local.Strategy({ usernameField: 'UserName', passwordField: 'Pas
             }).catch((err) => done(err, { UserName: userName }, { message: 'Can not find the user' }));
     }));
 
-class Auth {
+// @Routable('/AppManager/Department')
+export class Auth {
     public static async Login(req: Request, res: Response, next: NextFunction): Promise<void> {
         res.status(200).send({ result: 'Login success' });
     }

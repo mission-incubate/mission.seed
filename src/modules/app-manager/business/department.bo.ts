@@ -23,11 +23,14 @@ export class DepartmentBo extends BaseBo<DepartmentInstance, DepartmentAttribute
         return super.getResponse(super.getAttributes(result), apiReq.pageContext);
     }
 
-    public async DeleteDepartment(req: BaseRequest): Promise<ApiResponse<Boolean>> {
+    public async DeleteDepartment(req: BaseRequest): Promise<ApiResponse<any>> {
+        if (!req.id) {
+            throw { name: 'NOID', message: 'Invalid Id' };
+        }
         return super.getResponse(await super.markAsDelete(req.id));
     }
 
     public getModel(): SStatic.Model<DepartmentInstance, DepartmentAttributes> {
-        return App.Models.Department;
+        return super.models.Department;
     }
 }

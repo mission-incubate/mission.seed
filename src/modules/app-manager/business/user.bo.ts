@@ -23,16 +23,16 @@ export class UserBo extends BaseBo<UserInstance, UserAttributes> {
         return super.getResponse(super.getAttributes(result), apiReq.pageContext);
     }
 
-    public async DeleteUser(req: BaseRequest): Promise<ApiResponse<Boolean>> {
+    public async DeleteUser(req: BaseRequest): Promise<ApiResponse<any>> {
         return super.getResponse(await super.markAsDelete(req.id));
     }
 
     public getModel(): SStatic.Model<UserInstance, UserAttributes> {
-        return App.Models.User;
+        return super.models.User;
     }
 
     public async GetParams(apiReq?: ApiRequest<UserFilter>): Promise<any> {
-        super.qoBuilder.include(apiReq.includes, (include) => App.Includes[include.key]);
+        super.qoBuilder.include(apiReq.includes, (include) => AppIncludes.Instance[include.key]);
         super.qoBuilder.where(apiReq.filters, key => UserFilter[key]);
         return super.qoBuilder.findOptions;
     }

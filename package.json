@@ -21,12 +21,14 @@
   },
   "license": "MIT",
   "dependencies": {
-    "connect-redis": "^3.2.0",
+    "connect-redis": "^3.3.0",
     "lodash": "^4.17.4",
-    "mission.core": "0.0.1-alpha.14"
+    "mission.core": "0.0.1-beta.2",
+    "mysql2": "^1.4.0",
+    "typescript": "^2.4.2"
   },
   "devDependencies": {
-    "@types/connect-redis": "0.0.5",
-    "@types/lodash": "^4.14.61"
+    "@types/connect-redis": "0.0.6",
+    "@types/lodash": "^4.14.72"
   }
 }
