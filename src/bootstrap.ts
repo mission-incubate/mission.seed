@@ -1,6 +1,6 @@
 import { WebServer, Request, Response, NextFunction, WebServerConfig, LoggerInstance } from 'mission.core';
-import { AppRouter } from './modules/routes';
 import { ApiResponse, IBaseDto } from 'mission.common';
+import { AppRouter } from './modules/routes';
 
 export class Bootstrap {
     public Server: WebServer;
@@ -12,7 +12,7 @@ export class Bootstrap {
             var out: ApiResponse<IBaseDto> = {
                 data: null,
                 pageContext: null,
-                error: { code: null, message: msg, stack: process.env.NODE_ENV === 'development' ? err.stack : null }
+                error: { name: err.name, message: err.message, stack: process.env.NODE_ENV === 'development' ? err.stack : null }
             };
             logger.error(msg, err.stack);
             res.status(404).json(out);
@@ -30,4 +30,4 @@ export class Bootstrap {
     public Stop(): void {
         this.Server.stop();
     }
-};
+}

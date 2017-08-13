@@ -6,7 +6,7 @@ export default function (sequelize: Sequelize, DataTypes: DataTypes):
     SequelizeStatic.Model<i.UserInstance, i.UserAttributes> {
     let User = sequelize.define<i.UserInstance, i.UserAttributes>('User', {
         Id: { type: DataTypes.BIGINT, field: 'UserId', primaryKey: true, autoIncrement: true },
-        Title: { type: DataTypes.STRING, field: 'Title' },
+        TitleId: { type: DataTypes.BIGINT, field: 'TitleId' },
         FirstName: { type: DataTypes.STRING, field: 'FirstName' },
         MiddleName: { type: DataTypes.STRING, field: 'MiddleName' },
         LastName: { type: DataTypes.STRING, field: 'LastName' },
@@ -37,8 +37,8 @@ export default function (sequelize: Sequelize, DataTypes: DataTypes):
         IsSurgeon: { type: DataTypes.BOOLEAN, field: 'IsSurgeon' },
         OrgId: { type: DataTypes.BIGINT, field: 'OrgId' },
         FacilityId: { type: DataTypes.BIGINT, field: 'FacilityId' },
-        DeptId: { type: DataTypes.BIGINT, field: 'DeptId' },
-        SubDeptId: { type: DataTypes.BIGINT, field: 'SubDeptId' },
+        DepartmentId: { type: DataTypes.BIGINT, field: 'DepartmentId' },
+        SubDepartmentId: { type: DataTypes.BIGINT, field: 'SubDepartmentId' },
         UserGroupId: { type: DataTypes.BIGINT, field: 'UserGroupId' },
         ClinicalRoleId: { type: DataTypes.BIGINT, field: 'ClinicalRoleId' },
         UserTypeId: { type: DataTypes.BIGINT, field: 'UserTypeId' },

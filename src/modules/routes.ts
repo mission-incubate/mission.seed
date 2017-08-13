@@ -1,21 +1,20 @@
 import * as passport from 'passport';
 import * as session from 'express-session';
 import * as redisStore from 'connect-redis';
+import { GetRouter, Router, ApplicationRoutes, AuthMiddleware, TransactioniMiddleware } from 'mission.core';
 import { SessionConfig, RedisSessionConfig } from '../config';
-import { GetRouter, Router, AuthMiddleware, ApplicationRoutes } from 'mission.core';
-import Auth from './appManager/service/auth';
-import './appManager/service';
+import auth from './app-manager/service/auth.service';
+import './app-manager/service';
 
 let Store = redisStore(session);
 SessionConfig.store = new Store(RedisSessionConfig);
 
-var route: Router = GetRouter();
+const route: Router = GetRouter();
 route.use(session(SessionConfig));
 route.use(passport.initialize());
 route.use(passport.session());
-route.use('/Auth', Auth);
+route.use(auth);
 route.use(AuthMiddleware);
-//route.use(FacadeRoute);
-//route.use('/AppManager', AppManager);
+route.use(TransactioniMiddleware);
 route.use(ApplicationRoutes);
 export { route as AppRouter };

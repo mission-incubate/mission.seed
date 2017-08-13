@@ -23,11 +23,11 @@ export class FacilityBo extends BaseBo<FacilityInstance, FacilityAttributes> {
         return super.getResponse(super.getAttributes(result), apiReq.pageContext);
     }
 
-    public async DeleteFacility(req: BaseRequest): Promise<ApiResponse<Boolean>> {
+    public async DeleteFacility(req: BaseRequest): Promise<ApiResponse<any>> {
         return super.getResponse(await super.markAsDelete(req.id));
     }
 
     public getModel(): SStatic.Model<FacilityInstance, FacilityAttributes> {
-        return App.Models.Facility;
+        return super.models.Facility;
     }
 }

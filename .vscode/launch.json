@@ -6,7 +6,7 @@
     "configurations": [
         {
             "name": "Launch Program",
-            "type": "node2",
+            "type": "node",
             "request": "launch",
             "program": "${workspaceRoot}/build/index.js",
             "cwd": "${workspaceRoot}",
@@ -15,7 +15,7 @@
         },
         {
             "name": "Attach to Process",
-            "type": "node2",
+            "type": "node",
             "request": "attach",
             "port": 9229,
             "outFiles": [],

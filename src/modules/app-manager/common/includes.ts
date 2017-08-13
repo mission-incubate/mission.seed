@@ -1,8 +1,8 @@
-import { IncludeOptions, AppIncludes } from 'mission.core';
+import { IncludeOptions, AppIncludes, Repository/*, _*/ } from 'mission.core';
 
 export const AppManagerIncludes: { [key: string]: IncludeOptions } = {
     'User': {
-        model: App.Models.User,
+        model: Repository.Instance.Models.User,
         where: null,
         attributes: []
         /*'Id', 'Title', 'FirstName', 'MiddleName', 'LastName', 'Age', 'DOB', 'PreferredLanguageId', 'Qualification',
@@ -14,7 +14,7 @@ export const AppManagerIncludes: { [key: string]: IncludeOptions } = {
               'CreatedAt', 'UpdatedBy', 'UpdatedAt', */
     },
     'Organization': {
-        model: App.Models.Organization,
+        model: Repository.Instance.Models.Organization,
         where: null,
         attributes: ['Id', 'OrgCode', 'OrgName']
         /*'Id', 'OrgCode', 'OrgName', 'AddressLine1', 'AddressLine2', 'PinCode', 'Area', 'City', 'State', 'Country',
@@ -23,7 +23,7 @@ export const AppManagerIncludes: { [key: string]: IncludeOptions } = {
            'UpdatedBy', 'UpdatedAt', */
     },
     'Facility': {
-        model: App.Models.Facility,
+        model: Repository.Instance.Models.Facility,
         where: null,
         attributes: ['Id', 'FacilityCode', 'FacilityName']
         /*'Id', 'OrganizationId', 'FacilityCode', 'FacilityName', 'FacilityTypeId', 'Description', 'AddressLine1', 'AddressLine2',
@@ -32,7 +32,7 @@ export const AppManagerIncludes: { [key: string]: IncludeOptions } = {
            'CreatedAt', 'UpdatedBy', 'UpdatedAt', */
     },
     'Department': {
-        model: App.Models.Department,
+        model: Repository.Instance.Models.Department,
         where: null,
         attributes: []
         /*'Id', 'ParentDepartmentId', 'DepartmentCode', 'DepartmentName', 'DepartmentTypeId', 'Description', 'SpecialityId',
@@ -41,7 +41,7 @@ export const AppManagerIncludes: { [key: string]: IncludeOptions } = {
            'DepartmentLogo', 'Status', 'Rev', 'CreatedBy', 'CreatedAt', 'UpdatedBy', 'UpdatedAt', */
     },
     'Speciality': {
-        model: App.Models.Speciality,
+        model: Repository.Instance.Models.Speciality,
         where: null,
         attributes: []
         /*'Id', 'ParentSpecialityId', 'SpecialityCode', 'SpecialityName', 'SpecialityTypeId', 'Description', 'FacilityId',

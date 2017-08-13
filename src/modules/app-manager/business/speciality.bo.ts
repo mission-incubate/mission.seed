@@ -23,11 +23,11 @@ export class SpecialityBo extends BaseBo<SpecialityInstance, SpecialityAttribute
         return super.getResponse(super.getAttributes(result), apiReq.pageContext);
     }
 
-    public async DeleteSpeciality(req: BaseRequest): Promise<ApiResponse<Boolean>> {
+    public async DeleteSpeciality(req: BaseRequest): Promise<ApiResponse<any>> {
         return super.getResponse(await super.markAsDelete(req.id));
     }
 
     public getModel(): SStatic.Model<SpecialityInstance, SpecialityAttributes> {
-        return App.Models.Speciality;
+        return super.models.Speciality;
     }
 }
