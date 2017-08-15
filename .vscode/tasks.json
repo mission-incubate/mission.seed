@@ -5,7 +5,7 @@
     "tasks": [
         {
             "taskName": "Run Api Server",
-            "command": "node ./build/index.js",
+            "command": "node ./build/server/index.js",
             "type": "shell",
             "problemMatcher": [],
             "isBackground": true,

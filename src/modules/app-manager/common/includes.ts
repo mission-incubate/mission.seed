@@ -3,7 +3,7 @@ import { IncludeOptions, AppIncludes, Repository/*, _*/ } from 'mission.core';
 export const AppManagerIncludes: { [key: string]: IncludeOptions } = {
     'User': {
         model: Repository.Instance.Models.User,
-        where: null,
+        where: undefined,
         attributes: []
         /*'Id', 'Title', 'FirstName', 'MiddleName', 'LastName', 'Age', 'DOB', 'PreferredLanguageId', 'Qualification',
          'NationalityId', 'CategoryId', 'DoctorShareClassId', 'ActionFrom', 'ActionTo', 'AddressLine1', 'AddressLine2',
@@ -15,7 +15,7 @@ export const AppManagerIncludes: { [key: string]: IncludeOptions } = {
     },
     'Organization': {
         model: Repository.Instance.Models.Organization,
-        where: null,
+        where: undefined,
         attributes: ['Id', 'OrgCode', 'OrgName']
         /*'Id', 'OrgCode', 'OrgName', 'AddressLine1', 'AddressLine2', 'PinCode', 'Area', 'City', 'State', 'Country',
          'OrgStatusId', 'ActiveFrom', 'ActiveTo', 'IsBeds', 'IsDoctors', 'IsFacility', 'BedsCount', 'DoctorsCount',
@@ -24,7 +24,7 @@ export const AppManagerIncludes: { [key: string]: IncludeOptions } = {
     },
     'Facility': {
         model: Repository.Instance.Models.Facility,
-        where: null,
+        where: undefined,
         attributes: ['Id', 'FacilityCode', 'FacilityName']
         /*'Id', 'OrganizationId', 'FacilityCode', 'FacilityName', 'FacilityTypeId', 'Description', 'AddressLine1', 'AddressLine2',
          'PinCode', 'Area', 'City', 'State', 'Country', 'LandLine', 'FaxNo', 'Email', 'LanguageId', 'ActiveFrom', 'ActiveTo',
@@ -33,7 +33,7 @@ export const AppManagerIncludes: { [key: string]: IncludeOptions } = {
     },
     'Department': {
         model: Repository.Instance.Models.Department,
-        where: null,
+        where: undefined,
         attributes: []
         /*'Id', 'ParentDepartmentId', 'DepartmentCode', 'DepartmentName', 'DepartmentTypeId', 'Description', 'SpecialityId',
          'PhoneNo', 'IsEmergency', 'IsAdmittingDept', 'IncludeMRDRequired', 'IsPatientFlowMandatory', 'IsProcessingCenter',
@@ -42,11 +42,11 @@ export const AppManagerIncludes: { [key: string]: IncludeOptions } = {
     },
     'Speciality': {
         model: Repository.Instance.Models.Speciality,
-        where: null,
+        where: undefined,
         attributes: []
         /*'Id', 'ParentSpecialityId', 'SpecialityCode', 'SpecialityName', 'SpecialityTypeId', 'Description', 'FacilityId',
          'IsActive', 'Status', 'Rev', 'CreatedBy', 'CreatedAt', 'UpdatedBy', 'UpdatedAt', */
     },
 };
-//_.merge(AppIncludes, AppManagerIncludes);
+// _.merge(AppIncludes, AppManagerIncludes);
 AppIncludes.add(AppManagerIncludes);

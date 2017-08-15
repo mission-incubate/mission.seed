@@ -38,11 +38,7 @@ export default function (sequelize: Sequelize, DataTypes: DataTypes):
     },
         {
             indexes: [],
-            classMethods: {
-                associate: (models: Models): void => {
-                    return;
-                }
-            },
+            classMethods: {},
             timestamps: true,
             tableName: 'Facilities',
             createdAt: 'CreatedAt',
@@ -54,6 +50,10 @@ export default function (sequelize: Sequelize, DataTypes: DataTypes):
                 }
             }
         });
+
+    (Facility as any).associate = function (models: Models) {
+        return;
+    };
 
     return Facility;
 }

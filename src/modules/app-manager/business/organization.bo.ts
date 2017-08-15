@@ -16,7 +16,7 @@ export class OrganizationBo extends BaseBo<OrganizationInstance, OrganizationAtt
         return super.getResponse(result.dataValues.id);
     }
 
-    public async GetOrganizations(apiReq?: ApiRequest<OrganizationFilter>): Promise<ApiResponse<OrganizationAttributes[]>> {
+    public async GetOrganizations(apiReq: ApiRequest<OrganizationFilter>): Promise<ApiResponse<OrganizationAttributes[]>> {
         super.qoBuilder.include(apiReq.includes, (include) => AppIncludes.Instance[include.key]);
         super.qoBuilder.where(apiReq.filters, key => OrganizationFilter[key]);
         let result = await super.findAll(super.qoBuilder.findOptions);

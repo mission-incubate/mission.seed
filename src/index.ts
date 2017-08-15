@@ -1,14 +1,7 @@
-import { LoggerFactory, Repository } from 'mission.core';
-import { Paginator } from 'mission.common';
-import { DbConfig, WebConfig, LoggerConfig } from './config';
-import { join } from 'path';
-
-
-const logger = LoggerFactory.getLogger(LoggerConfig.ExceptionLoggerConfig);
-Paginator.init(Number(process.env.DEFAULT_PAGE_SIZE));
-let modelPattern = join(__dirname, 'modules', '**/*.model.js');
-Repository.init(DbConfig, modelPattern, logger);
-
-
 import { Bootstrap } from './bootstrap';
-new Bootstrap(WebConfig).init(logger).start();
+const server = new Bootstrap().server;
+import { AppRouter } from './modules/routes';
+// server.addStaticFileRouting(this.config.webBasePath, __dirname + this.config.webBasePath, this.config.staticFileConfig);
+// server.addStaticFileRouting(this.config.docsBasepath, __dirname + this.config.docsBasepath, this.config.staticFileConfig);
+server.addApiRouting('/', AppRouter);
+server.start();

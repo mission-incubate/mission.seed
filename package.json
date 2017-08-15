@@ -22,8 +22,9 @@
   "license": "MIT",
   "dependencies": {
     "connect-redis": "^3.3.0",
+    "express-session": "^1.15.5",
     "lodash": "^4.17.4",
-    "mission.core": "0.0.1-beta.2",
+    "mission.core": "0.0.1-beta.3",
     "mysql2": "^1.4.0",
     "typescript": "^2.4.2"
   },

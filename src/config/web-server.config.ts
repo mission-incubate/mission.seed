@@ -1,29 +1,16 @@
 import { WebServerConfig } from 'mission.core';
 
 export const WebConfig: WebServerConfig = {
-    apiPort: Number(process.env.PORT),
-    isHttpsEnabled: !!process.env.SSL_CERTIFICATE_PATH,
-    httpsCertificatepath: process.env.SSL_CERTIFICATE_PATH || '',
+    apiPort: Number(process.env.WEB_PORT),
+    isHttpsEnabled: !!process.env.WEB_SSL_CERTIFICATE_PATH,
+    httpsCertificatepath: process.env.WEB_SSL_CERTIFICATE_PATH || '',
     httpsKeypath: process.env.SSL_KEY_PATH || '',
-    staticFileConfig: {
-        dotfiles: 'ignore',
-        etag: false,
-        extensions: ['htm', 'html'],
-        index: ['index.html', 'index.htm'],
-        maxAge: '1d',
-        redirect: false,
-        setHeaders: function (res: any, path: string, stat: string) {
-            res.set('x-timestamp', Date.now().toString());
-        }
-    },
     corsOptions: {
-        origin: '*',
-        methods: ['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS'],
-        allowedHeaders: ['Authorization', 'Origin', 'X-Requested-With', 'Content-Type', 'Accept'],
-        exposedHeaders: [],
-        credentials: true,
-        maxAge: 3600
-    },
-    webBasePath: process.env.WEB_APPLICATION_PATH || '',
-    docsBasepath: process.env.API_DOCUMENT_PATH || ''
+        origin: process.env.CORS_ORIGIN,
+        methods: (process.env.CORS_METHODS || '').split(','),
+        allowedHeaders: (process.env.CORS_ALLOWED_HEADERS || '').split(','),
+        exposedHeaders: (process.env.CORS_EXPOSED_HEADERS || '').split(','),
+        credentials: Boolean(process.env.CORS_CREDENTIALS),
+        maxAge: Number(process.env.CORS_MAX_AGE)
+    }
 };
