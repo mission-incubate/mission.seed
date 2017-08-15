@@ -6,8 +6,8 @@ import { SessionConfig, RedisSessionConfig } from '../config';
 import auth from './app-manager/service/auth.service';
 import './app-manager/service';
 
-let Store = redisStore(session);
-SessionConfig.store = new Store(RedisSessionConfig);
+let RedisStore = redisStore(session);
+SessionConfig.store = new RedisStore(RedisSessionConfig);
 
 const route: Router = GetRouter();
 route.use(session(SessionConfig));

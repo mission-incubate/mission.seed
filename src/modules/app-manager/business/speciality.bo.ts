@@ -16,7 +16,7 @@ export class SpecialityBo extends BaseBo<SpecialityInstance, SpecialityAttribute
         return super.getResponse(result.dataValues.id);
     }
 
-    public async GetSpecialities(apiReq?: ApiRequest<SpecialityFilter>): Promise<ApiResponse<SpecialityAttributes[]>> {
+    public async GetSpecialities(apiReq: ApiRequest<SpecialityFilter>): Promise<ApiResponse<SpecialityAttributes[]>> {
         super.qoBuilder.include(apiReq.includes, (include) => AppIncludes.Instance[include.key]);
         super.qoBuilder.where(apiReq.filters, key => SpecialityFilter[key]);
         let result = await super.findAll(super.qoBuilder.findOptions);
@@ -24,7 +24,7 @@ export class SpecialityBo extends BaseBo<SpecialityInstance, SpecialityAttribute
     }
 
     public async DeleteSpeciality(req: BaseRequest): Promise<ApiResponse<any>> {
-        return super.getResponse(await super.markAsDelete(req.id));
+        return super.getResponse(await super.markAsDelete(req.id || 0));
     }
 
     public getModel(): SStatic.Model<SpecialityInstance, SpecialityAttributes> {

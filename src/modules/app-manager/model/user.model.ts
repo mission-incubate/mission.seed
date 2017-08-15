@@ -59,15 +59,7 @@ export default function (sequelize: Sequelize, DataTypes: DataTypes):
     },
         {
             indexes: [],
-            classMethods: {
-                associate: (models: Models): void => {
-                    User.belongsTo(models.Organization);
-                    User.belongsTo(models.Facility);
-                    User.belongsTo(models.Department);
-                    User.belongsTo(models.Department);
-                    User.belongsTo(models.Speciality);
-                }
-            },
+            classMethods: {},
             timestamps: true,
             tableName: 'Users',
             createdAt: 'CreatedAt',
@@ -79,6 +71,14 @@ export default function (sequelize: Sequelize, DataTypes: DataTypes):
                 }
             }
         });
+
+    (User as any).associate = function (models: Models) {
+        User.belongsTo(models.Organization);
+        User.belongsTo(models.Facility);
+        User.belongsTo(models.Department);
+        User.belongsTo(models.Department);
+        User.belongsTo(models.Speciality);
+    };
 
     return User;
 }

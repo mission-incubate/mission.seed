@@ -16,7 +16,7 @@ export class FacilityBo extends BaseBo<FacilityInstance, FacilityAttributes> {
         return super.getResponse(result.dataValues.id);
     }
 
-    public async GetFacilities(apiReq?: ApiRequest<FacilityFilter>): Promise<ApiResponse<FacilityAttributes[]>> {
+    public async GetFacilities(apiReq: ApiRequest<FacilityFilter>): Promise<ApiResponse<FacilityAttributes[]>> {
         super.qoBuilder.include(apiReq.includes, (include) => AppIncludes.Instance[include.key]);
         super.qoBuilder.where(apiReq.filters, key => FacilityFilter[key]);
         let result = await super.findAll(super.qoBuilder.findOptions);
@@ -24,7 +24,7 @@ export class FacilityBo extends BaseBo<FacilityInstance, FacilityAttributes> {
     }
 
     public async DeleteFacility(req: BaseRequest): Promise<ApiResponse<any>> {
-        return super.getResponse(await super.markAsDelete(req.id));
+        return super.getResponse(await super.markAsDelete(req.id||0));
     }
 
     public getModel(): SStatic.Model<FacilityInstance, FacilityAttributes> {
