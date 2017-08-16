@@ -10,7 +10,7 @@ export class Bootstrap {
         const startupLogger = LoggerFactory.getLogger(LoggerConfig.StartUpLoggerConfig);
         Paginator.init(Number(process.env.APP_DEFAULT_PAGE_SIZE));
         let modelPattern = join(__dirname, 'modules', '**/*.model.js');
-        Repository.init(DbConfig, modelPattern, logger);
+        Repository.init(DbConfig, modelPattern, startupLogger);
         const server = new WebServer(WebConfig, startupLogger);
         server.errorHandler = (err: Error, req: Request, res: Response, next: NextFunction): void => {
             const msg = typeof err === 'string' ? err : err.message;
