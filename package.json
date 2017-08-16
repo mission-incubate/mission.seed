@@ -23,6 +23,7 @@
   "dependencies": {
     "connect-redis": "^3.3.0",
     "express-session": "^1.15.5",
+    "helmet": "^3.8.1",
     "lodash": "^4.17.4",
     "mission.core": "0.0.1-beta.3",
     "mysql2": "^1.4.0",

@@ -3,9 +3,10 @@ import { BaseBo, BoRegister, AppIncludes } from 'mission.core';
 import { BaseRequest, ApiRequest, ApiResponse } from 'mission.common';
 import { FacilityInstance, FacilityAttributes } from '../model/interface';
 import { FacilityFilter } from '../common';
+import { AppBaseBo } from '../../../common';
 
 @BoRegister
-export class FacilityBo extends BaseBo<FacilityInstance, FacilityAttributes> {
+export class FacilityBo extends AppBaseBo<FacilityInstance, FacilityAttributes> {
     public async AddFacility(req: BaseRequest): Promise<ApiResponse<number>> {
         let result = await super.save(req.data);
         return super.getResponse(result.dataValues.id);

@@ -8,9 +8,9 @@ export const DbConfig: DatabaseConfig = {
         host: process.env.DATABASE_HOST_NAME || '',
         port: Number(process.env.DATABASE_PORT) || -1,
         dialect: process.env.DATABASE_DIALECT || '',
-        logging: console.warn,
+        logging: false,
         force: true,
-        timezone: '+12:00',
+        timezone: process.env.DATABASE_TIME_ZONE || '+12:00',
         benchmark: true
     }
 };

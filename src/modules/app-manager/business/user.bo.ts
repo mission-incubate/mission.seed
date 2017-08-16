@@ -3,9 +3,10 @@ import { BaseBo, BoRegister, AppIncludes } from 'mission.core';
 import { BaseRequest, ApiRequest, ApiResponse } from 'mission.common';
 import { UserInstance, UserAttributes } from '../model/interface';
 import { UserFilter } from '../common';
+import { AppBaseBo } from '../../../common';
 
 @BoRegister
-export class UserBo extends BaseBo<UserInstance, UserAttributes> {
+export class UserBo extends AppBaseBo<UserInstance, UserAttributes> {
     public async AddUser(req: BaseRequest): Promise<ApiResponse<number>> {
         let result = await super.save(req.data);
         return super.getResponse(result.dataValues.id);
