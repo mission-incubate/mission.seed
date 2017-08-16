@@ -3,9 +3,10 @@ import { BaseBo, BoRegister, AppIncludes } from 'mission.core';
 import { BaseRequest, ApiRequest, ApiResponse } from 'mission.common';
 import { OrganizationInstance, OrganizationAttributes } from '../model/interface';
 import { OrganizationFilter } from '../common';
+import { AppBaseBo } from '../../../common';
 
 @BoRegister
-export class OrganizationBo extends BaseBo<OrganizationInstance, OrganizationAttributes> {
+export class OrganizationBo extends AppBaseBo<OrganizationInstance, OrganizationAttributes> {
     public async AddOrganization(req: BaseRequest): Promise<ApiResponse<number>> {
         let result = await super.save(req.data);
         return super.getResponse(result.dataValues.id);

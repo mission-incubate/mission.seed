@@ -3,9 +3,10 @@ import { BaseBo, BoRegister, AppIncludes } from 'mission.core';
 import { BaseRequest, ApiRequest, ApiResponse } from 'mission.common';
 import { SpecialityInstance, SpecialityAttributes } from '../model/interface';
 import { SpecialityFilter } from '../common';
+import { AppBaseBo } from '../../../common';
 
 @BoRegister
-export class SpecialityBo extends BaseBo<SpecialityInstance, SpecialityAttributes> {
+export class SpecialityBo extends AppBaseBo<SpecialityInstance, SpecialityAttributes> {
     public async AddSpeciality(req: BaseRequest): Promise<ApiResponse<number>> {
         let result = await super.save(req.data);
         return super.getResponse(result.dataValues.id);

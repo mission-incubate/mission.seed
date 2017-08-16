@@ -3,9 +3,10 @@ import { BaseBo, BoRegister, AppIncludes } from 'mission.core';
 import { BaseRequest, ApiRequest, ApiResponse } from 'mission.common';
 import { DepartmentInstance, DepartmentAttributes } from '../model/interface';
 import { DepartmentFilter } from '../common';
+import { AppBaseBo } from '../../../common';
 
 @BoRegister
-export class DepartmentBo extends BaseBo<DepartmentInstance, DepartmentAttributes> {
+export class DepartmentBo extends AppBaseBo<DepartmentInstance, DepartmentAttributes> {
     public async AddDepartment(req: BaseRequest): Promise<ApiResponse<number>> {
         let result = await super.save(req.data);
         return super.getResponse(result.dataValues.id);
