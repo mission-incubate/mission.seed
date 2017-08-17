@@ -1,16 +1,16 @@
 import { DatabaseConfig } from 'mission.core';
 
 export const DbConfig: DatabaseConfig = {
-    userName: process.env.DATABASE_USER_NAME || '',
-    password: process.env.DATABASE_PASSWORD || '',
     database: process.env.DATABASE_NAME || '',
     options: {
-        host: process.env.DATABASE_HOST_NAME || '',
-        port: Number(process.env.DATABASE_PORT) || -1,
+        benchmark: true,
         dialect: process.env.DATABASE_DIALECT || '',
-        logging: false,
         force: true,
+        host: process.env.DATABASE_HOST_NAME || '',
+        logging: false,
+        port: Number(process.env.DATABASE_PORT) || -1,
         timezone: process.env.DATABASE_TIME_ZONE || '+12:00',
-        benchmark: true
-    }
+    },
+    password: process.env.DATABASE_PASSWORD || '',
+    userName: process.env.DATABASE_USER_NAME || '',
 };

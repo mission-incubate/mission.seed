@@ -2,39 +2,39 @@ import * as SequelizeStatic from 'sequelize';
 import { DataTypes, Sequelize } from 'sequelize';
 import * as i from './interface';
 
-export default function (sequelize: Sequelize, DataTypes: DataTypes):
+export default function (sequelize: Sequelize, dataTypes: DataTypes):
     SequelizeStatic.Model<i.FacilityInstance, i.FacilityAttributes> {
-    let Facility = sequelize.define<i.FacilityInstance, i.FacilityAttributes>('Facility', {
-        Id: { type: DataTypes.BIGINT, field: 'FacilityId', primaryKey: true, autoIncrement: true },
-        OrganizationId: { type: DataTypes.BIGINT, field: 'OrganizationId' },
-        FacilityCode: { type: DataTypes.STRING, field: 'FacilityCode' },
-        FacilityName: { type: DataTypes.STRING, field: 'FacilityName' },
-        FacilityTypeId: { type: DataTypes.INTEGER, field: 'FacilityTypeId' },
-        Description: { type: DataTypes.STRING, field: 'Description' },
-        AddressLine1: { type: DataTypes.STRING, field: 'AddressLine1' },
-        AddressLine2: { type: DataTypes.STRING, field: 'AddressLine2' },
-        PinCode: { type: DataTypes.STRING, field: 'PinCode' },
-        Area: { type: DataTypes.STRING, field: 'Area' },
-        City: { type: DataTypes.STRING, field: 'City' },
-        State: { type: DataTypes.STRING, field: 'State' },
-        Country: { type: DataTypes.STRING, field: 'Country' },
-        LandLine: { type: DataTypes.STRING, field: 'LandLine' },
-        FaxNo: { type: DataTypes.STRING, field: 'FaxNo' },
-        Email: { type: DataTypes.STRING, field: 'Email' },
-        LanguageId: { type: DataTypes.INTEGER, field: 'LanguageId' },
-        ActiveFrom: { type: DataTypes.DATE, field: 'ActiveFrom' },
-        ActiveTo: { type: DataTypes.DATE, field: 'ActiveTo' },
-        IsGstRegistered: { type: DataTypes.BOOLEAN, field: 'IsGstRegistered' },
-        GstNumber: { type: DataTypes.STRING, field: 'GstNumber' },
-        RegistrationNo: { type: DataTypes.STRING, field: 'RegistrationNo' },
-        TaxActiveFrom: { type: DataTypes.DATE, field: 'TaxActiveFrom' },
-        TaxActiveTo: { type: DataTypes.DATE, field: 'TaxActiveTo' },
-        Status: { type: DataTypes.INTEGER, field: 'Status' },
-        Rev: { type: DataTypes.INTEGER, field: 'Rev' },
-        CreatedBy: { type: DataTypes.INTEGER, field: 'CreatedBy' },
-        CreatedAt: { type: DataTypes.DATE, field: 'CreatedAt' },
-        UpdatedBy: { type: DataTypes.INTEGER, field: 'UpdatedBy' },
-        UpdatedAt: { type: DataTypes.DATE, field: 'UpdatedAt' },
+    const Facility = sequelize.define<i.FacilityInstance, i.FacilityAttributes>('Facility', {
+        Id: { type: dataTypes.BIGINT, field: 'FacilityId', primaryKey: true, autoIncrement: true },
+        OrganizationId: { type: dataTypes.BIGINT, field: 'OrganizationId' },
+        FacilityCode: { type: dataTypes.STRING, field: 'FacilityCode' },
+        FacilityName: { type: dataTypes.STRING, field: 'FacilityName' },
+        FacilityTypeId: { type: dataTypes.INTEGER, field: 'FacilityTypeId' },
+        Description: { type: dataTypes.STRING, field: 'Description' },
+        AddressLine1: { type: dataTypes.STRING, field: 'AddressLine1' },
+        AddressLine2: { type: dataTypes.STRING, field: 'AddressLine2' },
+        PinCode: { type: dataTypes.STRING, field: 'PinCode' },
+        Area: { type: dataTypes.STRING, field: 'Area' },
+        City: { type: dataTypes.STRING, field: 'City' },
+        State: { type: dataTypes.STRING, field: 'State' },
+        Country: { type: dataTypes.STRING, field: 'Country' },
+        LandLine: { type: dataTypes.STRING, field: 'LandLine' },
+        FaxNo: { type: dataTypes.STRING, field: 'FaxNo' },
+        Email: { type: dataTypes.STRING, field: 'Email' },
+        LanguageId: { type: dataTypes.INTEGER, field: 'LanguageId' },
+        ActiveFrom: { type: dataTypes.DATE, field: 'ActiveFrom' },
+        ActiveTo: { type: dataTypes.DATE, field: 'ActiveTo' },
+        IsGstRegistered: { type: dataTypes.BOOLEAN, field: 'IsGstRegistered' },
+        GstNumber: { type: dataTypes.STRING, field: 'GstNumber' },
+        RegistrationNo: { type: dataTypes.STRING, field: 'RegistrationNo' },
+        TaxActiveFrom: { type: dataTypes.DATE, field: 'TaxActiveFrom' },
+        TaxActiveTo: { type: dataTypes.DATE, field: 'TaxActiveTo' },
+        Status: { type: dataTypes.INTEGER, field: 'Status' },
+        Rev: { type: dataTypes.INTEGER, field: 'Rev' },
+        CreatedBy: { type: dataTypes.INTEGER, field: 'CreatedBy' },
+        CreatedAt: { type: dataTypes.DATE, field: 'CreatedAt' },
+        UpdatedBy: { type: dataTypes.INTEGER, field: 'UpdatedBy' },
+        UpdatedAt: { type: dataTypes.DATE, field: 'UpdatedAt' },
     },
         {
             indexes: [],
@@ -46,12 +46,12 @@ export default function (sequelize: Sequelize, DataTypes: DataTypes):
             freezeTableName: true,
             defaultScope: {
                 where: {
-                    Status: 1
-                }
-            }
+                    Status: 1,
+                },
+            },
         });
 
-    (Facility as any).associate = function (models: Models) {
+    (Facility as any).associate = (models: Models) => {
         return;
     };
 

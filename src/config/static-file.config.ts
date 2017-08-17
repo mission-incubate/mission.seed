@@ -7,7 +7,7 @@ export const FileConfig: StaticFileConfig = {
     index: ['index.html', 'index.htm'],
     maxAge: process.env.STATIC_FILE_MAX_AGE || '1d',
     redirect: false,
-    setHeaders: function (res: any, path: string, stat: string) {
+    setHeaders: (res: any, path: string, stat: string) => {
         res.set('x-timestamp', Date.now().toString());
-    }
+    },
 };

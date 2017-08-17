@@ -1,4 +1,4 @@
-import { Instance, IAttributes } from 'mission.core';
+import { IAttributes, Instance } from 'mission.core';
 
 export interface OrganizationAttributes extends IAttributes {
 

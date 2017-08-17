@@ -1,7 +1,6 @@
-import { Instance, IAttributes } from 'mission.core';
+import { IAttributes, Instance } from 'mission.core';
 
 export interface FacilityAttributes extends IAttributes {
-
     OrganizationId: number;
     FacilityCode: string;
     FacilityName: string;

@@ -1,5 +1,5 @@
-import * as i from './Interface';
 import * as SequelizeStatic from 'sequelize';
+import * as i from './Interface';
 
 declare global {
     interface Models {

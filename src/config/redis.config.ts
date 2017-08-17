@@ -9,7 +9,7 @@ import { RedisStoreOptions } from 'connect-redis';
 // };
 
 export const RedisSessionConfig: RedisStoreOptions = {
+    db: 0,
     host: process.env.REDIS_HOST_NAME || 'localhost',
     port: Number(process.env.REDIS_PORT),
-    db: 0
 };

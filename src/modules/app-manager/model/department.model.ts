@@ -2,37 +2,37 @@ import * as SequelizeStatic from 'sequelize';
 import { DataTypes, Sequelize } from 'sequelize';
 import * as i from './interface';
 
-export default function (sequelize: Sequelize, DataTypes: DataTypes):
+export default function (sequelize: Sequelize, dataTypes: DataTypes):
     SequelizeStatic.Model<i.DepartmentInstance, i.DepartmentAttributes> {
-    let Department = sequelize.define<i.DepartmentInstance, i.DepartmentAttributes>('Department', {
-        Id: { type: DataTypes.BIGINT, field: 'DepartmentId', primaryKey: true, autoIncrement: true },
-        ParentDepartmentId: { type: DataTypes.BIGINT, field: 'ParentDepartmentId' },
-        DepartmentCode: { type: DataTypes.STRING, field: 'DepartmentCode' },
-        DepartmentName: { type: DataTypes.STRING, field: 'DepartmentName' },
-        DepartmentTypeId: { type: DataTypes.INTEGER, field: 'DepartmentTypeId' },
-        Description: { type: DataTypes.STRING, field: 'Description' },
-        SpecialityId: { type: DataTypes.BIGINT, field: 'SpecialityId' },
-        PhoneNo: { type: DataTypes.STRING, field: 'PhoneNo' },
-        IsEmergency: { type: DataTypes.BOOLEAN, field: 'IsEmergency' },
-        IsAdmittingDept: { type: DataTypes.BOOLEAN, field: 'IsAdmittingDept' },
-        IncludeMRDRequired: { type: DataTypes.BOOLEAN, field: 'IncludeMRDRequired' },
-        IsPatientFlowMandatory: { type: DataTypes.BOOLEAN, field: 'IsPatientFlowMandatory' },
-        IsProcessingCenter: { type: DataTypes.BOOLEAN, field: 'IsProcessingCenter' },
-        CostCenterId: { type: DataTypes.BIGINT, field: 'CostCenterId' },
-        URL: { type: DataTypes.STRING, field: 'URL' },
-        ThresholdDuration: { type: DataTypes.INTEGER, field: 'ThresholdDuration' },
-        FollowupDays: { type: DataTypes.INTEGER, field: 'FollowupDays' },
-        NightStartTime: { type: DataTypes.TIME, field: 'NightStartTime' },
-        NightEndTime: { type: DataTypes.TIME, field: 'NightEndTime' },
-        ActiveFrom: { type: DataTypes.DATE, field: 'ActiveFrom' },
-        ActiveTo: { type: DataTypes.DATE, field: 'ActiveTo' },
-        DepartmentLogo: { type: DataTypes.STRING.BINARY, field: 'DepartmentLogo' },
-        Status: { type: DataTypes.INTEGER, field: 'Status' },
-        Rev: { type: DataTypes.INTEGER, field: 'Rev' },
-        CreatedBy: { type: DataTypes.INTEGER, field: 'CreatedBy' },
-        CreatedAt: { type: DataTypes.DATE, field: 'CreatedAt' },
-        UpdatedBy: { type: DataTypes.INTEGER, field: 'UpdatedBy' },
-        UpdatedAt: { type: DataTypes.DATE, field: 'UpdatedAt' },
+    const Department = sequelize.define<i.DepartmentInstance, i.DepartmentAttributes>('Department', {
+        Id: { type: dataTypes.BIGINT, field: 'DepartmentId', primaryKey: true, autoIncrement: true },
+        ParentDepartmentId: { type: dataTypes.BIGINT, field: 'ParentDepartmentId' },
+        DepartmentCode: { type: dataTypes.STRING, field: 'DepartmentCode' },
+        DepartmentName: { type: dataTypes.STRING, field: 'DepartmentName' },
+        DepartmentTypeId: { type: dataTypes.INTEGER, field: 'DepartmentTypeId' },
+        Description: { type: dataTypes.STRING, field: 'Description' },
+        SpecialityId: { type: dataTypes.BIGINT, field: 'SpecialityId' },
+        PhoneNo: { type: dataTypes.STRING, field: 'PhoneNo' },
+        IsEmergency: { type: dataTypes.BOOLEAN, field: 'IsEmergency' },
+        IsAdmittingDept: { type: dataTypes.BOOLEAN, field: 'IsAdmittingDept' },
+        IncludeMRDRequired: { type: dataTypes.BOOLEAN, field: 'IncludeMRDRequired' },
+        IsPatientFlowMandatory: { type: dataTypes.BOOLEAN, field: 'IsPatientFlowMandatory' },
+        IsProcessingCenter: { type: dataTypes.BOOLEAN, field: 'IsProcessingCenter' },
+        CostCenterId: { type: dataTypes.BIGINT, field: 'CostCenterId' },
+        URL: { type: dataTypes.STRING, field: 'URL' },
+        ThresholdDuration: { type: dataTypes.INTEGER, field: 'ThresholdDuration' },
+        FollowupDays: { type: dataTypes.INTEGER, field: 'FollowupDays' },
+        NightStartTime: { type: dataTypes.TIME, field: 'NightStartTime' },
+        NightEndTime: { type: dataTypes.TIME, field: 'NightEndTime' },
+        ActiveFrom: { type: dataTypes.DATE, field: 'ActiveFrom' },
+        ActiveTo: { type: dataTypes.DATE, field: 'ActiveTo' },
+        DepartmentLogo: { type: dataTypes.STRING.BINARY, field: 'DepartmentLogo' },
+        Status: { type: dataTypes.INTEGER, field: 'Status' },
+        Rev: { type: dataTypes.INTEGER, field: 'Rev' },
+        CreatedBy: { type: dataTypes.INTEGER, field: 'CreatedBy' },
+        CreatedAt: { type: dataTypes.DATE, field: 'CreatedAt' },
+        UpdatedBy: { type: dataTypes.INTEGER, field: 'UpdatedBy' },
+        UpdatedAt: { type: dataTypes.DATE, field: 'UpdatedAt' },
     },
         {
             indexes: [],
@@ -44,12 +44,12 @@ export default function (sequelize: Sequelize, DataTypes: DataTypes):
             freezeTableName: true,
             defaultScope: {
                 where: {
-                    Status: 1
-                }
-            }
+                    Status: 1,
+                },
+            },
         });
 
-    (Department as any).associate = function (models: Models) {
+    (Department as any).associate = (models: Models) => {
         return;
     };
     return Department;
