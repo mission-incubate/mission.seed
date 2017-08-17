@@ -6,18 +6,18 @@ import { OrganizationBo } from '../business';
 export class OrganizationService {
     public static async AddOrganization(req: Request, res: Response, next: NextFunction): Promise<ApiResponse<number>> {
         const organizationBo = BoFactory.getBo<OrganizationBo>(OrganizationBo, req);
-        return await organizationBo.AddOrganization(req.body);
+        return await organizationBo.addOrganization(req.body);
     }
     public static async UpdateOrganization(req: Request, res: Response, next: NextFunction): Promise<ApiResponse<number>> {
         const organizationBo = BoFactory.getBo<OrganizationBo>(OrganizationBo, req);
-        return await organizationBo.UpdateOrganization(req.body);
+        return await organizationBo.updateOrganization(req.body);
     }
     public static async GetOrganizations(req: Request, res: Response, next: NextFunction): Promise<ApiResponse<any>> {
         const organizationBo = BoFactory.getBo<OrganizationBo>(OrganizationBo, req);
-        return await organizationBo.GetOrganizations(req.body);
+        return await organizationBo.getOrganizations(req.body);
     }
     public static async DeleteOrganization(req: Request, res: Response, next: NextFunction): Promise<ApiResponse<Boolean>> {
         const organizationBo = BoFactory.getBo<OrganizationBo>(OrganizationBo, req);
-        return await organizationBo.DeleteOrganization(req.body);
+        return await organizationBo.deleteOrganization(req.body);
     }
 }

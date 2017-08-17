@@ -4,20 +4,20 @@ import { SpecialityBo } from '../business';
 
 @Routable('/AppManager/Speciality')
 export class SpecialityService {
-    public static async AddSpeciality(req: Request, res: Response, next: NextFunction): Promise<ApiResponse<number>> {
+    public static async addSpeciality(req: Request, res: Response, next: NextFunction): Promise<ApiResponse<number>> {
         const specialityBo = BoFactory.getBo<SpecialityBo>(SpecialityBo, req);
-        return await specialityBo.AddSpeciality(req.body);
+        return await specialityBo.addSpeciality(req.body);
     }
-    public static async UpdateSpeciality(req: Request, res: Response, next: NextFunction): Promise<ApiResponse<number>> {
+    public static async updateSpeciality(req: Request, res: Response, next: NextFunction): Promise<ApiResponse<number>> {
         const specialityBo = BoFactory.getBo<SpecialityBo>(SpecialityBo, req);
-        return await specialityBo.UpdateSpeciality(req.body);
+        return await specialityBo.updateSpeciality(req.body);
     }
-    public static async GetSpecialities(req: Request, res: Response, next: NextFunction): Promise<ApiResponse<any>> {
+    public static async getSpecialities(req: Request, res: Response, next: NextFunction): Promise<ApiResponse<any>> {
         const specialityBo = BoFactory.getBo<SpecialityBo>(SpecialityBo, req);
-        return await specialityBo.GetSpecialities(req.body);
+        return await specialityBo.getSpecialities(req.body);
     }
-    public static async DeleteSpeciality(req: Request, res: Response, next: NextFunction): Promise<ApiResponse<Boolean>> {
+    public static async deleteSpeciality(req: Request, res: Response, next: NextFunction): Promise<ApiResponse<Boolean>> {
         const specialityBo = BoFactory.getBo<SpecialityBo>(SpecialityBo, req);
-        return await specialityBo.DeleteSpeciality(req.body);
+        return await specialityBo.deleteSpeciality(req.body);
     }
 }

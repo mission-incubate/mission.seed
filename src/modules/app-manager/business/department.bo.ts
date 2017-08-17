@@ -7,24 +7,24 @@ import { AppBaseBo } from '../../../common';
 
 @BoRegister
 export class DepartmentBo extends AppBaseBo<DepartmentInstance, DepartmentAttributes> {
-    public async AddDepartment(req: BaseRequest): Promise<ApiResponse<number>> {
+    public async addDepartment(req: BaseRequest): Promise<ApiResponse<number>> {
         let result = await super.save(req.data);
         return super.getResponse(result.dataValues.id);
     }
 
-    public async UpdateDepartment(req: BaseRequest): Promise<ApiResponse<number>> {
+    public async updateDepartment(req: BaseRequest): Promise<ApiResponse<number>> {
         let result = await super.update(req.data);
         return super.getResponse(result.dataValues.id);
     }
 
-    public async GetDepartments(apiReq: ApiRequest<DepartmentFilter>): Promise<ApiResponse<DepartmentAttributes[]>> {
+    public async getDepartments(apiReq: ApiRequest<DepartmentFilter>): Promise<ApiResponse<DepartmentAttributes[]>> {
         super.qoBuilder.include(apiReq.includes, (include) => AppIncludes.Instance[include.key]);
         super.qoBuilder.where(apiReq.filters, key => DepartmentFilter[key]);
         let result = await super.findAll(super.qoBuilder.findOptions);
         return super.getResponse(super.getAttributes(result), apiReq.pageContext);
     }
 
-    public async DeleteDepartment(req: BaseRequest): Promise<ApiResponse<any>> {
+    public async deleteDepartment(req: BaseRequest): Promise<ApiResponse<any>> {
         if (!req.id) {
             throw { name: 'NOID', message: 'Invalid Id' };
         }

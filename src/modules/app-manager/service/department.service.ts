@@ -4,20 +4,20 @@ import { DepartmentBo } from '../business';
 
 @Routable('/AppManager/Department')
 export class DepartmentService {
-    public static async AddDepartment(req: Request, res: Response, next: NextFunction): Promise<ApiResponse<number>> {
+    public static async addDepartment(req: Request, res: Response, next: NextFunction): Promise<ApiResponse<number>> {
         const departmentBo = BoFactory.getBo<DepartmentBo>(DepartmentBo, req);
-        return await departmentBo.AddDepartment(req.body);
+        return await departmentBo.addDepartment(req.body);
     }
-    public static async UpdateDepartment(req: Request, res: Response, next: NextFunction): Promise<ApiResponse<number>> {
+    public static async updateDepartment(req: Request, res: Response, next: NextFunction): Promise<ApiResponse<number>> {
         const departmentBo = BoFactory.getBo<DepartmentBo>(DepartmentBo, req);
-        return await departmentBo.UpdateDepartment(req.body);
+        return await departmentBo.updateDepartment(req.body);
     }
-    public static async GetDepartments(req: Request, res: Response, next: NextFunction): Promise<ApiResponse<any>> {
+    public static async getDepartments(req: Request, res: Response, next: NextFunction): Promise<ApiResponse<any>> {
         const departmentBo = BoFactory.getBo<DepartmentBo>(DepartmentBo, req);
-        return await departmentBo.GetDepartments(req.body);
+        return await departmentBo.getDepartments(req.body);
     }
-    public static async DeleteDepartment(req: Request, res: Response, next: NextFunction): Promise<ApiResponse<Boolean>> {
+    public static async deleteDepartment(req: Request, res: Response, next: NextFunction): Promise<ApiResponse<Boolean>> {
         const departmentBo = BoFactory.getBo<DepartmentBo>(DepartmentBo, req);
-        return await departmentBo.DeleteDepartment(req.body);
+        return await departmentBo.deleteDepartment(req.body);
     }
 }

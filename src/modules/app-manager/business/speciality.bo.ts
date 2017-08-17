@@ -7,24 +7,24 @@ import { AppBaseBo } from '../../../common';
 
 @BoRegister
 export class SpecialityBo extends AppBaseBo<SpecialityInstance, SpecialityAttributes> {
-    public async AddSpeciality(req: BaseRequest): Promise<ApiResponse<number>> {
+    public async addSpeciality(req: BaseRequest): Promise<ApiResponse<number>> {
         let result = await super.save(req.data);
         return super.getResponse(result.dataValues.id);
     }
 
-    public async UpdateSpeciality(req: BaseRequest): Promise<ApiResponse<number>> {
+    public async updateSpeciality(req: BaseRequest): Promise<ApiResponse<number>> {
         let result = await super.update(req.data);
         return super.getResponse(result.dataValues.id);
     }
 
-    public async GetSpecialities(apiReq: ApiRequest<SpecialityFilter>): Promise<ApiResponse<SpecialityAttributes[]>> {
+    public async getSpecialities(apiReq: ApiRequest<SpecialityFilter>): Promise<ApiResponse<SpecialityAttributes[]>> {
         super.qoBuilder.include(apiReq.includes, (include) => AppIncludes.Instance[include.key]);
         super.qoBuilder.where(apiReq.filters, key => SpecialityFilter[key]);
         let result = await super.findAll(super.qoBuilder.findOptions);
         return super.getResponse(super.getAttributes(result), apiReq.pageContext);
     }
 
-    public async DeleteSpeciality(req: BaseRequest): Promise<ApiResponse<any>> {
+    public async deleteSpeciality(req: BaseRequest): Promise<ApiResponse<any>> {
         return super.getResponse(await super.markAsDelete(req.id || 0));
     }
 
