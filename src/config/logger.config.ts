@@ -3,62 +3,62 @@ import { LoggerOptionList } from 'mission.core';
 export const LoggerConfig: {
     StartUpLoggerConfig: LoggerOptionList,
     ExceptionLoggerConfig: LoggerOptionList,
-    SqlLoggerConfig: LoggerOptionList
+    SqlLoggerConfig: LoggerOptionList,
 } = {
-        StartUpLoggerConfig: [
-            {
-                Console: {
-                    level: 'info',
-                    colorize: true,
-                    timestamp: true,
-                    json: true
-                },
-                File: {
-                    filename: 'startup.log',
-                    dirname: process.env.LOG_FOLDER_PATH,
-                    level: 'info',
-                    handleExceptions: true,
-                    timestamp: true,
-                    humanReadableUnhandledException: true,
-                    json: false
-                }
-            }
-        ],
         ExceptionLoggerConfig: [
             {
                 Console: {
-                    level: 'info',
                     colorize: true,
+                    json: true,
+                    level: 'info',
                     timestamp: true,
-                    json: true
                 },
                 DailyRotateFile: {
-                    filename: 'exception.log',
                     dirname: process.env.LOG_FOLDER_PATH,
-                    level: 'info',
+                    filename: 'exception.log',
                     handleExceptions: true,
-                    timestamp: true,
                     humanReadableUnhandledException: true,
-                    json: false
-                }
-            }
+                    json: false,
+                    level: 'info',
+                    timestamp: true,
+                },
+            },
         ],
         SqlLoggerConfig: [
             {
                 Console: {
-                    level: 'info',
                     colorize: true,
+                    json: false,
+                    level: 'info',
                     timestamp: true,
-                    json: false
                 },
                 File: {
-                    filename: 'sql.log',
                     dirname: process.env.LOG_FOLDER_PATH,
-                    level: 'info',
+                    filename: 'sql.log',
                     handleExceptions: true,
                     humanReadableUnhandledException: true,
-                    json: false
-                }
-            }
-        ]
+                    json: false,
+                    level: 'info',
+                },
+            },
+        ],
+        StartUpLoggerConfig: [
+            {
+                Console: {
+                    colorize: true,
+                    json: true,
+                    level: 'info',
+                    timestamp: true,
+                },
+                File: {
+                    dirname: process.env.LOG_FOLDER_PATH,
+                    filename: 'startup.log',
+                    handleExceptions: true,
+                    humanReadableUnhandledException: true,
+                    json: false,
+                    level: 'info',
+                    timestamp: true,
+                },
+            },
+        ],
     };

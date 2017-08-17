@@ -1,26 +1,27 @@
+import { ApiRequest, ApiResponse, BaseRequest } from 'mission.common';
+import { AppIncludes, BaseBo, BoRegister } from 'mission.core';
 import * as SStatic from 'sequelize';
-import { BaseBo, BoRegister, AppIncludes } from 'mission.core';
-import { BaseRequest, ApiRequest, ApiResponse } from 'mission.common';
-import { DepartmentInstance, DepartmentAttributes } from '../model/interface';
-import { DepartmentFilter } from '../common';
+
 import { AppBaseBo } from '../../../common';
+import { DepartmentFilter } from '../common';
+import { DepartmentAttributes, DepartmentInstance } from '../model/interface';
 
 @BoRegister
 export class DepartmentBo extends AppBaseBo<DepartmentInstance, DepartmentAttributes> {
     public async addDepartment(req: BaseRequest): Promise<ApiResponse<number>> {
-        let result = await super.save(req.data);
+        const result = await super.save(req.data);
         return super.getResponse(result.dataValues.id);
     }
 
     public async updateDepartment(req: BaseRequest): Promise<ApiResponse<number>> {
-        let result = await super.update(req.data);
+        const result = await super.update(req.data);
         return super.getResponse(result.dataValues.id);
     }
 
     public async getDepartments(apiReq: ApiRequest<DepartmentFilter>): Promise<ApiResponse<DepartmentAttributes[]>> {
         super.qoBuilder.include(apiReq.includes, (include) => AppIncludes.Instance[include.key]);
-        super.qoBuilder.where(apiReq.filters, key => DepartmentFilter[key]);
-        let result = await super.findAll(super.qoBuilder.findOptions);
+        super.qoBuilder.where(apiReq.filters, (key) => DepartmentFilter[key]);
+        const result = await super.findAll(super.qoBuilder.findOptions);
         return super.getResponse(super.getAttributes(result), apiReq.pageContext);
     }
 

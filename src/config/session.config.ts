@@ -2,12 +2,12 @@ import { SessionOptions } from 'mission.core';
 import { WebConfig } from './web-server.config';
 
 export const SessionConfig: SessionOptions = {
-    secret: process.env.SESSION_SECRET || 'mission.io',
     cookie: {
-        secure: WebConfig.isHttpsEnabled,
+        httpOnly: true,
         maxAge: Number(process.env.SESSION_MAX_AGE),
-        httpOnly: true
+        secure: WebConfig.isHttpsEnabled,
     },
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    secret: process.env.SESSION_SECRET || 'mission.io',
 };

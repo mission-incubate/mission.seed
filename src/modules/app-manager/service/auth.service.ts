@@ -1,4 +1,6 @@
-import { BoFactory, Router, Request, Response, NextFunction, GetRouter, Wrap, Routable, ApplicationRoutes } from 'mission.core';
+import {
+    ApplicationRoutes, BoFactory, GetRouter, NextFunction, Request, Response, Routable, Router, Wrap,
+} from 'mission.core';
 import * as passport from 'passport';
 import * as local from 'passport-local';
 
@@ -11,11 +13,11 @@ import { UserBo } from '../business';
 //     }
 // );
 
-passport.serializeUser((user: any, done: Function) => {
+passport.serializeUser((user: any, done: (err: any, id?: any) => void) => {
     done(null, user);
 });
 
-passport.deserializeUser((user: any, done: Function) => {
+passport.deserializeUser((user: any, done: (err: any, user?: any) => void) => {
     done(null, user);
 });
 
@@ -27,10 +29,10 @@ passport.use(new local.Strategy({ usernameField: 'UserName', passwordField: 'Pas
                 if (!user || !user.dataValues || user.dataValues.Password !== password) {
                     return done(null, false);
                 }
-                let value = user.dataValues;
+                const value = user.dataValues;
                 return done(null, {
                     UserId: value.id,
-                    UserName: value.UserName
+                    UserName: value.UserName,
                 });
             }).catch((err) => done(err, { UserName: userName }, { message: 'Can not find the user' }));
     }));
@@ -46,7 +48,7 @@ export class Auth {
     }
 }
 
-let router: Router = GetRouter();
+const router: Router = GetRouter();
 router.post('/' + Auth.login.name, passport.authenticate('local'), Wrap(Auth.login));
 router.post('/' + Auth.logout.name, Wrap(Auth.logout));
 export default router;

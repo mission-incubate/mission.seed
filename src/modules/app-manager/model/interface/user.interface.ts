@@ -1,7 +1,6 @@
-import { Instance, IAttributes } from 'mission.core';
+import { IAttributes, Instance } from 'mission.core';
 
 export interface UserAttributes extends IAttributes {
-
     Title: string;
     FirstName: string;
     MiddleName: string;

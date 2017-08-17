@@ -1,4 +1,5 @@
-import { Request, Response, NextFunction, BoFactory, Routable } from 'mission.core';
+import { BoFactory, NextFunction, Request, Response, Routable } from 'mission.core';
+
 import { UserBo } from '../business';
 
 @Routable('/AppManager/User')

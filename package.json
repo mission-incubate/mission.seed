@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prebuild": "rimraf build",
-    "lint": "tslint src/**/*.ts",
+    "lint": "tslint src/**/*.ts --type-check --project tsconfig.json",
     "build": "npm run lint && tsc",
     "prepublish": "tsc"
   },
@@ -26,11 +26,18 @@
     "helmet": "^3.8.1",
     "lodash": "^4.17.4",
     "mission.core": "0.0.1-beta.3",
-    "mysql2": "^1.4.0",
+    "mysql2": "^1.4.1",
+    "should": "^11.2.1",
+    "supertest": "^3.0.0",
     "typescript": "^2.4.2"
   },
   "devDependencies": {
+    "@types/should": "^8.3.0",
+    "@types/supertest": "^2.0.2",
+    "@types/chai": "^4.0.3",
     "@types/connect-redis": "0.0.6",
-    "@types/lodash": "^4.14.72"
+    "@types/lodash": "^4.14.73",
+    "@types/mocha": "^2.2.41",
+    "mocha": "^3.5.0"
   }
 }

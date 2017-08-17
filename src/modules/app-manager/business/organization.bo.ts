@@ -1,26 +1,28 @@
+import { ApiRequest, ApiResponse, BaseRequest } from 'mission.common';
+import { AppIncludes, BaseBo, BoRegister } from 'mission.core';
 import * as SStatic from 'sequelize';
-import { BaseBo, BoRegister, AppIncludes } from 'mission.core';
-import { BaseRequest, ApiRequest, ApiResponse } from 'mission.common';
-import { OrganizationInstance, OrganizationAttributes } from '../model/interface';
-import { OrganizationFilter } from '../common';
+
 import { AppBaseBo } from '../../../common';
+import { OrganizationFilter } from '../common';
+import { OrganizationAttributes, OrganizationInstance } from '../model/interface';
 
 @BoRegister
 export class OrganizationBo extends AppBaseBo<OrganizationInstance, OrganizationAttributes> {
     public async addOrganization(req: BaseRequest): Promise<ApiResponse<number>> {
-        let result = await super.save(req.data);
+        const result = await super.save(req.data);
         return super.getResponse(result.dataValues.id);
     }
 
     public async updateOrganization(req: BaseRequest): Promise<ApiResponse<number>> {
-        let result = await super.update(req.data);
+        const result = await super.update(req.data);
         return super.getResponse(result.dataValues.id);
     }
 
-    public async getOrganizations(apiReq: ApiRequest<OrganizationFilter>): Promise<ApiResponse<OrganizationAttributes[]>> {
+    public async getOrganizations(apiReq: ApiRequest<OrganizationFilter>)
+        : Promise<ApiResponse<OrganizationAttributes[]>> {
         super.qoBuilder.include(apiReq.includes, (include) => AppIncludes.Instance[include.key]);
-        super.qoBuilder.where(apiReq.filters, key => OrganizationFilter[key]);
-        let result = await super.findAll(super.qoBuilder.findOptions);
+        super.qoBuilder.where(apiReq.filters, (key) => OrganizationFilter[key]);
+        const result = await super.findAll(super.qoBuilder.findOptions);
         return super.getResponse(super.getAttributes(result), apiReq.pageContext);
     }
 
