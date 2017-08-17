@@ -4,20 +4,20 @@ import { FacilityBo } from '../business';
 
 @Routable('/AppManager/Facility')
 export class FacilityService {
-    public static async AddFacility(req: Request, res: Response, next: NextFunction): Promise<ApiResponse<number>> {
+    public static async addFacility(req: Request, res: Response, next: NextFunction): Promise<ApiResponse<number>> {
         const facilityBo = BoFactory.getBo<FacilityBo>(FacilityBo, req);
-        return await facilityBo.AddFacility(req.body);
+        return await facilityBo.addFacility(req.body);
     }
-    public static async UpdateFacility(req: Request, res: Response, next: NextFunction): Promise<ApiResponse<number>> {
+    public static async updateFacility(req: Request, res: Response, next: NextFunction): Promise<ApiResponse<number>> {
         const facilityBo = BoFactory.getBo<FacilityBo>(FacilityBo, req);
-        return await facilityBo.UpdateFacility(req.body);
+        return await facilityBo.updateFacility(req.body);
     }
-    public static async GetFacilities(req: Request, res: Response, next: NextFunction): Promise<ApiResponse<any>> {
+    public static async getFacilities(req: Request, res: Response, next: NextFunction): Promise<ApiResponse<any>> {
         const facilityBo = BoFactory.getBo<FacilityBo>(FacilityBo, req);
-        return await facilityBo.GetFacilities(req.body);
+        return await facilityBo.getFacilities(req.body);
     }
-    public static async DeleteFacility(req: Request, res: Response, next: NextFunction): Promise<ApiResponse<Boolean>> {
+    public static async deleteFacility(req: Request, res: Response, next: NextFunction): Promise<ApiResponse<Boolean>> {
         const facilityBo = BoFactory.getBo<FacilityBo>(FacilityBo, req);
-        return await facilityBo.DeleteFacility(req.body);
+        return await facilityBo.deleteFacility(req.body);
     }
 }

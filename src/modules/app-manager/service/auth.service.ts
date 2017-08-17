@@ -1,7 +1,8 @@
-import { BoFactory, Router, Request, Response, NextFunction, GetRouter, Wrap/*, Routable */ } from 'mission.core';
-import { UserBo } from '../business';
+import { BoFactory, Router, Request, Response, NextFunction, GetRouter, Wrap, Routable, ApplicationRoutes } from 'mission.core';
 import * as passport from 'passport';
 import * as local from 'passport-local';
+
+import { UserBo } from '../business';
 
 // router.post('/login',
 //     passport.authenticate('local', { successRedirect: '/home', failureRedirect: '/login', failureFlash: true }),
@@ -36,16 +37,16 @@ passport.use(new local.Strategy({ usernameField: 'UserName', passwordField: 'Pas
 
 // @Routable('/AppManager/Department')
 export class Auth {
-    public static async Login(req: Request, res: Response, next: NextFunction): Promise<void> {
+    public static async login(req: Request, res: Response, next: NextFunction): Promise<void> {
         res.status(200).send({ result: 'Login success' });
     }
-    public static async Logout(req: Request, res: Response, next: NextFunction): Promise<void> {
+    public static async logout(req: Request, res: Response, next: NextFunction): Promise<void> {
         req.logout();
         res.status(200).send({ result: 'Logout success' });
     }
 }
 
 let router: Router = GetRouter();
-router.post('/' + Auth.Login.name, passport.authenticate('local'), Wrap(Auth.Login));
-router.post('/' + Auth.Logout.name, Wrap(Auth.Logout));
+router.post('/' + Auth.login.name, passport.authenticate('local'), Wrap(Auth.login));
+router.post('/' + Auth.logout.name, Wrap(Auth.logout));
 export default router;

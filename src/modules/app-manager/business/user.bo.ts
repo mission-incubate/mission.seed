@@ -7,17 +7,17 @@ import { AppBaseBo } from '../../../common';
 
 @BoRegister
 export class UserBo extends AppBaseBo<UserInstance, UserAttributes> {
-    public async AddUser(req: BaseRequest): Promise<ApiResponse<number>> {
+    public async addUser(req: BaseRequest): Promise<ApiResponse<number>> {
         let result = await super.save(req.data);
         return super.getResponse(result.dataValues.id);
     }
 
-    public async UpdateUser(req: BaseRequest): Promise<ApiResponse<number>> {
+    public async updateUser(req: BaseRequest): Promise<ApiResponse<number>> {
         let result = await super.update(req.data);
         return super.getResponse(result.dataValues.id);
     }
 
-    public async GetUsers(apiReq: ApiRequest<UserFilter>): Promise<ApiResponse<UserAttributes[]>> {
+    public async getUsers(apiReq: ApiRequest<UserFilter>): Promise<ApiResponse<UserAttributes[]>> {
         const qob = super.qoBuilder;
         qob.include(apiReq.includes, (include) => AppIncludes.Instance[include.key]);
         qob.where(apiReq.filters, key => UserFilter[key]);
@@ -25,7 +25,7 @@ export class UserBo extends AppBaseBo<UserInstance, UserAttributes> {
         return super.getResponse(super.getAttributes(result), apiReq.pageContext);
     }
 
-    public async DeleteUser(req: BaseRequest): Promise<ApiResponse<any>> {
+    public async deleteUser(req: BaseRequest): Promise<ApiResponse<any>> {
         return super.getResponse(await super.markAsDelete(req.id || 0));
     }
 
@@ -33,7 +33,7 @@ export class UserBo extends AppBaseBo<UserInstance, UserAttributes> {
         return super.models.User;
     }
 
-    public async GetParams(apiReq: ApiRequest<UserFilter>): Promise<any> {
+    public async getParams(apiReq: ApiRequest<UserFilter>): Promise<any> {
         super.qoBuilder.include(apiReq.includes, (include) => AppIncludes.Instance[include.key]);
         super.qoBuilder.where(apiReq.filters, key => UserFilter[key]);
         return super.qoBuilder.findOptions;

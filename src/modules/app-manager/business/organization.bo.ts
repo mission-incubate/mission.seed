@@ -7,24 +7,24 @@ import { AppBaseBo } from '../../../common';
 
 @BoRegister
 export class OrganizationBo extends AppBaseBo<OrganizationInstance, OrganizationAttributes> {
-    public async AddOrganization(req: BaseRequest): Promise<ApiResponse<number>> {
+    public async addOrganization(req: BaseRequest): Promise<ApiResponse<number>> {
         let result = await super.save(req.data);
         return super.getResponse(result.dataValues.id);
     }
 
-    public async UpdateOrganization(req: BaseRequest): Promise<ApiResponse<number>> {
+    public async updateOrganization(req: BaseRequest): Promise<ApiResponse<number>> {
         let result = await super.update(req.data);
         return super.getResponse(result.dataValues.id);
     }
 
-    public async GetOrganizations(apiReq: ApiRequest<OrganizationFilter>): Promise<ApiResponse<OrganizationAttributes[]>> {
+    public async getOrganizations(apiReq: ApiRequest<OrganizationFilter>): Promise<ApiResponse<OrganizationAttributes[]>> {
         super.qoBuilder.include(apiReq.includes, (include) => AppIncludes.Instance[include.key]);
         super.qoBuilder.where(apiReq.filters, key => OrganizationFilter[key]);
         let result = await super.findAll(super.qoBuilder.findOptions);
         return super.getResponse(super.getAttributes(result), apiReq.pageContext);
     }
 
-    public async DeleteOrganization(req: BaseRequest): Promise<ApiResponse<any>> {
+    public async deleteOrganization(req: BaseRequest): Promise<ApiResponse<any>> {
         if (!req.id) {
             throw { name: 'NOID', message: 'Invalid Id' };
         }
