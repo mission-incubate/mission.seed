@@ -5,6 +5,7 @@
     ],
     "jsRules": {},
     "rules": {
+        "ban-types": true,
         "interface-name": [
             "never-prefix"
         ],
