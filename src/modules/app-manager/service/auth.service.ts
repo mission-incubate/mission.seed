@@ -5,6 +5,7 @@ import * as passport from 'passport';
 import * as local from 'passport-local';
 
 import { UserBo } from '../business';
+import { UserInstance } from '../model/interface/user.interface';
 
 // router.post('/login',
 //     passport.authenticate('local', { successRedirect: '/home', failureRedirect: '/login', failureFlash: true }),
@@ -25,7 +26,7 @@ passport.use(new local.Strategy({ usernameField: 'UserName', passwordField: 'Pas
     (userName: string, password: string, done: Function) => {
         const userBo = BoFactory.getBo(UserBo);
         userBo.findOne({ where: { UserName: userName }, attributes: ['Id', 'UserName', 'Password'] })
-            .then((user) => {
+            .then((user: UserInstance) => {
                 if (!user || !user.dataValues || user.dataValues.Password !== password) {
                     return done(null, false);
                 }
@@ -34,17 +35,17 @@ passport.use(new local.Strategy({ usernameField: 'UserName', passwordField: 'Pas
                     UserId: value.id,
                     UserName: value.UserName,
                 });
-            }).catch((err) => done(err, { UserName: userName }, { message: 'Can not find the user' }));
+            }).catch((err: Error) => done(err, { UserName: userName }, { message: 'Can not find the user' }));
     }));
 
 // @Routable('/AppManager/Department')
 export class Auth {
     public static async login(req: Request, res: Response, next: NextFunction): Promise<void> {
-        res.status(200).send({ result: 'Login success' });
+        res.data = { result: 'Login success' };
     }
     public static async logout(req: Request, res: Response, next: NextFunction): Promise<void> {
         req.logout();
-        res.status(200).send({ result: 'Logout success' });
+        res.data = { result: 'Logout success' };
     }
 }
 
