@@ -11,6 +11,6 @@ export const WebConfig: WebServerConfig = {
         origin: process.env.CORS_ORIGIN,
     },
     httpsCertificatepath: process.env.WEB_SSL_CERTIFICATE_PATH || '',
-    httpsKeypath: process.env.SSL_KEY_PATH || '',
+    httpsKeypath: process.env.WEB_SSL_KEY_PATH || '',
     isHttpsEnabled: !!process.env.WEB_SSL_CERTIFICATE_PATH,
 };
