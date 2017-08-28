@@ -22,7 +22,7 @@ passport.deserializeUser((user: any, done: (err: any, user?: any) => void) => {
     done(null, user);
 });
 
-passport.use(new local.Strategy({ usernameField: 'UserName', passwordField: 'Password' },
+passport.use(new local.Strategy({ usernameField: 'userName', passwordField: 'password' },
     (userName: string, password: string, done: Function) => {
         const userBo = BoFactory.getBo(UserBo);
         userBo.findOne({ where: { UserName: userName }, attributes: ['Id', 'UserName', 'Password'] })
@@ -32,7 +32,7 @@ passport.use(new local.Strategy({ usernameField: 'UserName', passwordField: 'Pas
                 }
                 const value = user.dataValues;
                 return done(null, {
-                    UserId: value.id,
+                    UserId: (value as any).Id,
                     UserName: value.UserName,
                 });
             }).catch((err: Error) => done(err, { UserName: userName }, { message: 'Can not find the user' }));
