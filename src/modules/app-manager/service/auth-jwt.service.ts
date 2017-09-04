@@ -65,6 +65,7 @@ export class Auth {
 }
 
 const router: Router = GetRouter();
-router.post('/' + Auth.login.name, Wrap(Auth.login), passport.authenticate('jwt', { session: true }));
+router.post('/' + Auth.login.name, Wrap(Auth.login));
+router.use(passport.authenticate('jwt', { session: true }));
 router.post('/' + Auth.logout.name, Wrap(Auth.logout));
 export default router;
