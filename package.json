@@ -4,10 +4,12 @@
   "description": "mission.io's Seed project",
   "main": "index.js",
   "scripts": {
-    "prebuild": "rimraf build",
+    "prebuild": "rimraf build && npm run lint",
     "lint": "tslint src/**/*.ts --type-check --project tsconfig.json",
-    "build": "npm run lint && tsc",
-    "prepublish": "tsc"
+    "build": "tsc -p tsconfig.json",
+    "prepublish": "tsc",
+    "pretest": "rimraf test && tsc -p test.tsconfig.json",
+    "test": "./node_modules/.bin/mocha --reporter spec"
   },
   "keywords": [
     "mission",

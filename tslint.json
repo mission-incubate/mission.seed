@@ -15,7 +15,11 @@
         "quotemark": [
             true,
             "single"
-        ]
+        ],
+        "object-literal-sort-keys": [
+            false
+        ],
+        "space-before-function-paren": false
     },
     "rulesDirectory": []
 }
