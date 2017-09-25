@@ -1,4 +1,4 @@
-import { should } from 'should';
+import 'mocha';
 import * as supertest from 'supertest';
 import { server } from '../../../index';
 const agent = supertest.agent(server.app);
