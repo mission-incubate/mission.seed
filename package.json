@@ -25,17 +25,17 @@
   "dependencies": {
     "@types/jsonwebtoken": "^7.2.3",
     "@types/passport-jwt": "^2.0.24",
-    "@types/passport-local": "^1.0.30",
+    "@types/passport-local": "^1.0.31",
     "connect-redis": "^3.3.0",
     "express-session": "^1.15.5",
     "helmet": "^3.8.1",
-    "jsonwebtoken": "^7.4.3",
+    "jsonwebtoken": "^8.0.1",
     "lodash": "^4.17.4",
-    "mission.core": "0.0.1-beta.5",
+    "mission.core": "0.0.1-beta.8",
     "mysql2": "^1.4.2",
     "passport-jwt": "^3.0.0",
     "passport-local": "^1.0.0",
-    "should": "^12.0.0",
+    "should": "^13.1.0",
     "supertest": "^3.0.0",
     "typescript": "^2.5.2"
   },
@@ -43,9 +43,9 @@
     "@types/chai": "^4.0.4",
     "@types/connect-redis": "0.0.6",
     "@types/lodash": "^4.14.74",
-    "@types/mocha": "^2.2.42",
+    "@types/mocha": "^2.2.43",
     "@types/should": "^11.2.0",
     "@types/supertest": "^2.0.3",
-    "mocha": "^3.5.0"
+    "mocha": "^3.5.3"
   }
 }

@@ -1,6 +1,7 @@
 import { IAttributes, Instance } from 'mission.core';
 
 export interface UserAttributes extends IAttributes {
+    id: number;
     Title: string;
     FirstName: string;
     MiddleName: string;
@@ -53,7 +54,7 @@ export interface UserAttributes extends IAttributes {
     UpdatedAt: Date;
 }
 
-export interface UserInstance extends Instance<UserAttributes> {
+export interface UserInstance extends Instance<UserAttributes>, UserAttributes {
     // I'm exposing every DB column as an instance field to so that tsc won't complain.
     // CreatedAt: Date;
     // UpdatedAt: Date;

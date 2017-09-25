@@ -8,29 +8,34 @@ import { OrganizationAttributes, OrganizationInstance } from '../model/interface
 
 @BoRegister
 export class OrganizationBo extends AppBaseBo<OrganizationInstance, OrganizationAttributes> {
-    public async addOrganization(req: BaseRequest): Promise<ApiResponse<number>> {
+    public async addOrganization(req: BaseRequest): Promise<OrganizationInstance> {
         const result = await super.save(req.data);
-        return super.getResponse(result.dataValues.id);
+        // return super.getResponse(result.dataValues.id);
+        return result;
     }
 
-    public async updateOrganization(req: BaseRequest): Promise<ApiResponse<number>> {
+    public async updateOrganization(req: BaseRequest): Promise<number> {
         const result = await super.update(req.data);
-        return super.getResponse(result.dataValues.id);
+        // return super.getResponse(result.dataValues.id);
+        return result;
     }
 
     public async getOrganizations(apiReq: ApiRequest<OrganizationFilter>)
-        : Promise<ApiResponse<OrganizationAttributes[]>> {
+        : Promise<OrganizationInstance[]> {
         super.qoBuilder.include(apiReq.includes, (include) => AppIncludes.Instance[include.key]);
         super.qoBuilder.where(apiReq.filters, (key) => OrganizationFilter[key]);
         const result = await super.findAll(super.qoBuilder.findOptions);
-        return super.getResponse(super.getAttributes(result), apiReq.pageContext);
+        // return super.getResponse(super.getAttributes(result), apiReq.pageContext);
+        return result;
     }
 
-    public async deleteOrganization(req: BaseRequest): Promise<ApiResponse<any>> {
+    public async deleteOrganization(req: BaseRequest): Promise<number> {
         if (!req.id) {
             throw { name: 'NOID', message: 'Invalid Id' };
         }
-        return super.getResponse(await super.markAsDelete(req.id));
+        // return super.getResponse(await super.markAsDelete(req.id));
+        const result = await super.markAsDelete(req.id);
+        return result;
     }
 
     public getModel(): SStatic.Model<OrganizationInstance, OrganizationAttributes> {
