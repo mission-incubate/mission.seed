@@ -1,7 +1,7 @@
 import { IAttributes, Instance } from 'mission.core';
 
 export interface OrganizationAttributes extends IAttributes {
-
+    id: number;
     OrgCode: string;
     OrgName: string;
     AddressLine1: string;
@@ -31,7 +31,7 @@ export interface OrganizationAttributes extends IAttributes {
     UpdatedAt: Date;
 }
 
-export interface OrganizationInstance extends Instance<OrganizationAttributes> {
+export interface OrganizationInstance extends Instance<OrganizationAttributes>, OrganizationAttributes {
     // I'm exposing every DB column as an instance field to so that tsc won't complain.
     // CreatedAt: Date;
     // UpdatedAt: Date;

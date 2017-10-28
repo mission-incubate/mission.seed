@@ -35,18 +35,18 @@ export default function (sequelize: Sequelize, dataTypes: DataTypes):
         UpdatedAt: { type: dataTypes.DATE, field: 'UpdatedAt' },
     },
         {
-            indexes: [],
             classMethods: {},
-            timestamps: true,
-            tableName: 'Departments',
             createdAt: 'CreatedAt',
-            updatedAt: 'UpdatedAt',
-            freezeTableName: true,
             defaultScope: {
                 where: {
                     Status: 1,
                 },
             },
+            freezeTableName: true,
+            indexes: [],
+            tableName: 'Departments',
+            timestamps: true,
+            updatedAt: 'UpdatedAt',
         });
 
     (Department as any).associate = (models: Models) => {

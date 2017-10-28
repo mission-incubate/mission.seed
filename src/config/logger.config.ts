@@ -9,7 +9,7 @@ export const LoggerConfig: {
             {
                 Console: {
                     colorize: true,
-                    json: true,
+                    json: false,
                     level: 'info',
                     timestamp: true,
                 },
@@ -46,7 +46,7 @@ export const LoggerConfig: {
             {
                 Console: {
                     colorize: true,
-                    json: true,
+                    json: false,
                     level: 'info',
                     timestamp: true,
                 },

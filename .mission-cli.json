@@ -1,0 +1,19 @@
+{
+  "name": "mission.seed",
+  "tsconfig": "tsconfig.json",
+  "env": {
+    "DATABASE_DIALECT": "mysql",
+    "DATABASE_HOST_NAME": "localhost",
+    "DATABASE_PORT": 3306,
+    "DATABASE_NAME": "tools",
+    "DATABASE_USER_NAME": "root",
+    "DATABASE_PASSWORD": "irtt"
+  },
+  "task": [
+    {
+      "command": "echo success",
+      "name": "task1",
+      "path": "server"
+    }
+  ]
+}
