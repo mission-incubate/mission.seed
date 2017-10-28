@@ -6,16 +6,17 @@
     "configurations": [
         {
             "name": "Launch Program",
-            "type": "node2",
+            "type": "node",
             "request": "launch",
-            "program": "${workspaceRoot}/build/index.js",
+            "program": "${workspaceRoot}/build/server/index.js",
             "cwd": "${workspaceRoot}",
             "outFiles": [],
-            "sourceMaps": true
+            "sourceMaps": true,
+            "stopOnEntry": true
         },
         {
             "name": "Attach to Process",
-            "type": "node2",
+            "type": "node",
             "request": "attach",
             "port": 9229,
             "outFiles": [],

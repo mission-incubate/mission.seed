@@ -1,33 +1,35 @@
-import { WebServer, Request, Response, NextFunction, WebServerConfig, LoggerInstance } from 'mission.core';
-import { AppRouter } from './modules/routes';
-import { ApiResponse, IBaseDto } from 'mission.common';
+import { ApiResponse, IBaseDto, Paginator } from 'mission.common';
+import { LoggerFactory, NextFunction, Repository, Request, Response, WebServer } from 'mission.core';
+import { join } from 'path';
+
+import { DbConfig, LoggerConfig, WebConfig } from './config';
 
 export class Bootstrap {
-    public Server: WebServer;
-    constructor(private config: WebServerConfig) { }
-    public init(logger: LoggerInstance): WebServer {
-        let server = new WebServer(this.config, logger, logger);
+    public server: WebServer;
+    public constructor() {
+        const logger = LoggerFactory.getLogger(LoggerConfig.ExceptionLoggerConfig);
+        const startupLogger = LoggerFactory.getLogger(LoggerConfig.StartUpLoggerConfig);
+        Paginator.init(Number(process.env.APP_DEFAULT_PAGE_SIZE));
+        const modelPattern = join(__dirname, 'modules', '**/*.model.js');
+        Repository.init(DbConfig, modelPattern, startupLogger);
+        const server = new WebServer(WebConfig, startupLogger);
         server.errorHandler = (err: Error, req: Request, res: Response, next: NextFunction): void => {
-            let msg = typeof err === 'string' ? err : err.message;
-            var out: ApiResponse<IBaseDto> = {
-                data: null,
-                pageContext: null,
-                error: { code: null, message: msg, stack: process.env.NODE_ENV === 'development' ? err.stack : null }
+            const msg = typeof err === 'string' ? err : err.message;
+            const out: ApiResponse<IBaseDto> = {
+                data: undefined,
+                error: {
+                    message: err.message,
+                    name: err.name,
+                    stack: process.env.NODE_ENV === 'development' ? err.stack : undefined,
+                },
+                pageContext: undefined,
             };
             logger.error(msg, err.stack);
             res.status(404).json(out);
         };
+        startupLogger.info(JSON.stringify(process.env));
         server.init();
-        server.addStaticFileRouting(this.config.webBasePath, __dirname + this.config.webBasePath, this.config.staticFileConfig);
-        server.addStaticFileRouting(this.config.docsBasepath, __dirname + this.config.docsBasepath, this.config.staticFileConfig);
-        server.addApiRouting('/', AppRouter);
-        this.Server = server;
-        return this.Server;
+        this.server = server;
+        return this;
     }
-    public Start(): void {
-        this.Server.start();
-    }
-    public Stop(): void {
-        this.Server.stop();
-    }
-};
+}
