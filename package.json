@@ -43,6 +43,6 @@
     "mission.cli": "0.0.1-alpha.1",
     "mocha": "^4.0.1",
     "supertest": "^3.0.0",
-    "typescript": "^2.6.1"
+    "typescript": "^2.5.3"
   }
 }
