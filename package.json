@@ -27,12 +27,12 @@
     "helmet": "^3.9.0",
     "jsonwebtoken": "^8.1.0",
     "mission.core": "0.0.1-beta.10",
-    "mysql2": "^1.4.2",
+    "mysql2": "^1.5.0",
     "passport-jwt": "^3.0.1",
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
-    "@types/chai": "^4.0.4",
+    "@types/chai": "^4.0.5",
     "@types/connect-redis": "0.0.7",
     "@types/jsonwebtoken": "^7.2.3",
     "@types/mocha": "^2.2.44",
