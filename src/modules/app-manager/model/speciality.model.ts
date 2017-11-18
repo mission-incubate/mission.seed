@@ -2,9 +2,9 @@ import * as SequelizeStatic from 'sequelize';
 import { DataTypes, Sequelize } from 'sequelize';
 import * as i from './interface';
 
-export default function(sequelize: Sequelize, dataTypes: DataTypes):
+export default function (sequelize: Sequelize, dataTypes: DataTypes):
     SequelizeStatic.Model<i.SpecialityInstance, i.SpecialityAttributes> {
-    let Speciality = sequelize.define<i.SpecialityInstance, i.SpecialityAttributes>('Speciality', {
+    const Speciality = sequelize.define<i.SpecialityInstance, i.SpecialityAttributes>('Speciality', {
         Id: { type: dataTypes.BIGINT, field: 'SpecialityId', primaryKey: true, autoIncrement: true },
         ParentSpecialityId: { type: dataTypes.BIGINT, field: 'ParentSpecialityId' },
         SpecialityCode: { type: dataTypes.STRING, field: 'SpecialityCode' },
@@ -35,7 +35,7 @@ export default function(sequelize: Sequelize, dataTypes: DataTypes):
             },
         });
 
-    (Speciality as any).associate =  (models: Models) => {
+    (Speciality as any).associate = (models: Models) => {
         return;
     };
 
