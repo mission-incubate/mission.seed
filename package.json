@@ -4,10 +4,9 @@
   "description": "mission.io's Seed project",
   "main": "index.js",
   "scripts": {
-    "prebuild": "rimraf build && npm run lint",
     "lint": "tslint src/**/*.ts --project tsconfig.json",
+    "prebuild": "rimraf build && npm run lint",
     "build": "tsc -p tsconfig.json",
-    "prepublish": "tsc",
     "pretest": "rimraf test && tsc -p test.tsconfig.json",
     "test": "./node_modules/.bin/mocha --reporter spec"
   },
@@ -19,7 +18,7 @@
   "author": {
     "name": "Natarajan Ganapathi",
     "email": "natarajanmca11@gmail.com",
-    "url": "www.linkedin.com/in/natarajanganapathi"
+    "url": "http://www.linkedin.com/in/natarajanganapathi"
   },
   "license": "MIT",
   "dependencies": {
@@ -28,13 +27,13 @@
     "helmet": "^3.9.0",
     "jsonwebtoken": "^8.1.0",
     "mission.core": "0.0.1-beta.10",
-    "mysql2": "^1.4.2",
+    "mysql2": "^1.5.0",
     "passport-jwt": "^3.0.1",
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
-    "@types/chai": "^4.0.4",
-    "@types/connect-redis": "0.0.6",
+    "@types/chai": "^4.0.5",
+    "@types/connect-redis": "0.0.7",
     "@types/jsonwebtoken": "^7.2.3",
     "@types/mocha": "^2.2.44",
     "@types/passport-jwt": "^3.0.0",
@@ -44,6 +43,6 @@
     "mission.cli": "0.0.1-alpha.1",
     "mocha": "^4.0.1",
     "supertest": "^3.0.0",
-    "typescript": "^2.6.1"
+    "typescript": "^2.5.3"
   }
 }
