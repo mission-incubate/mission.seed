@@ -8,7 +8,8 @@
     "DATABASE_NAME": "tools",
     "DATABASE_USER_NAME": "root",
     "DATABASE_PASSWORD": "irtt",
-    "DATABASE_TIMEZONE": "+5:30"
+    "DATABASE_TIMEZONE": "+5:30",
+    "DATABASE_OPERATORS_ALIASES": false
   },
   "task": [
     {
