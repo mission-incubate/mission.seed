@@ -4,7 +4,7 @@
   "description": "mission.io's Seed project",
   "main": "index.js",
   "scripts": {
-    "lint": "tslint src/**/*.ts --project tsconfig.json",
+    "lint": "tslint -p tsconfig.json",
     "prebuild": "rimraf build && npm run lint",
     "build": "tsc -p tsconfig.json",
     "pretest": "rimraf test && tsc -p test.tsconfig.json",
@@ -26,8 +26,8 @@
     "express-session": "^1.15.6",
     "helmet": "^3.9.0",
     "jsonwebtoken": "^8.1.0",
-    "mission.core": "0.0.1-beta.10",
-    "mysql2": "^1.5.0",
+    "mission.core": "0.0.1-beta.11",
+    "mysql2": "^1.5.1",
     "passport-jwt": "^3.0.1",
     "passport-local": "^1.0.0"
   },
@@ -38,11 +38,11 @@
     "@types/mocha": "^2.2.44",
     "@types/passport-jwt": "^3.0.0",
     "@types/passport-local": "^1.0.32",
-    "@types/supertest": "^2.0.3",
+    "@types/supertest": "^2.0.4",
     "chai": "^4.1.2",
-    "mission.cli": "0.0.1-alpha.1",
+    "mission.cli": "0.0.1-alpha.4",
     "mocha": "^4.0.1",
     "supertest": "^3.0.0",
-    "typescript": "^2.5.3"
+    "typescript": "^2.6.1"
   }
 }
