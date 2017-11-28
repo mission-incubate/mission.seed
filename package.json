@@ -21,6 +21,10 @@
     "url": "http://www.linkedin.com/in/natarajanganapathi"
   },
   "license": "MIT",
+  "repository": {
+    "url": "https://github.com/mission-io/mission.seed.git",
+    "type": "git"
+  },
   "dependencies": {
     "connect-redis": "^3.3.2",
     "express-session": "^1.15.6",
@@ -32,7 +36,7 @@
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
-    "@types/chai": "^4.0.5",
+    "@types/chai": "^4.0.6",
     "@types/connect-redis": "0.0.7",
     "@types/jsonwebtoken": "^7.2.3",
     "@types/mocha": "^2.2.44",
@@ -43,6 +47,6 @@
     "mission.cli": "0.0.1-alpha.4",
     "mocha": "^4.0.1",
     "supertest": "^3.0.0",
-    "typescript": "^2.6.1"
+    "typescript": "^2.6.2"
   }
 }

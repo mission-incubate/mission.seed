@@ -10,6 +10,8 @@ export const DbConfig: DatabaseConfig = {
         logging: false,
         port: Number(process.env.DATABASE_PORT) || -1,
         timezone: process.env.DATABASE_TIME_ZONE || '+12:00',
+        operatorsAliases: false,
+        storage: '',
     },
     password: process.env.DATABASE_PASSWORD || '',
     userName: process.env.DATABASE_USER_NAME || '',
