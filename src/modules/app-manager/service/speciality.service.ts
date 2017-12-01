@@ -1,4 +1,4 @@
-import { ApiResponse } from 'mission.common';
+// import { ApiResponse } from 'mission.common';
 import { BoFactory, NextFunction, Request, Response, Routable } from 'mission.core';
 
 import { SpecialityBo } from '../business';

@@ -1,6 +1,6 @@
-import { sign, verify } from 'jsonwebtoken';
+import { sign } from 'jsonwebtoken';
 import {
-    ApplicationRoutes, BoFactory, GetRouter, NextFunction, Request, Response, Routable, Router, Wrap,
+    BoFactory, GetRouter, NextFunction, Request, Response, Router, Wrap,
 } from 'mission.core';
 import * as passport from 'passport';
 import { ExtractJwt, Strategy, StrategyOptions } from 'passport-jwt';
