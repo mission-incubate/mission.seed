@@ -30,7 +30,7 @@
     "express-session": "^1.15.6",
     "helmet": "^3.9.0",
     "jsonwebtoken": "^8.1.0",
-    "mission.core": "0.0.1-beta.11",
+    "mission.core": "0.0.1-beta.13",
     "mysql2": "^1.5.1",
     "passport-jwt": "^3.0.1",
     "passport-local": "^1.0.0"
@@ -44,7 +44,7 @@
     "@types/passport-local": "^1.0.32",
     "@types/supertest": "^2.0.4",
     "chai": "^4.1.2",
-    "mission.cli": "0.0.1-alpha.4",
+    "mission.cli": "0.0.1-alpha.5",
     "mocha": "^4.0.1",
     "supertest": "^3.0.0",
     "typescript": "^2.6.2"
