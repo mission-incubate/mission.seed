@@ -4,7 +4,7 @@ import { UserBo } from '../business';
 
 @Routable('/AppManager/User')
 export class UserService {
-    @Routable('/AddUser')
+    @Routable('/addUser')
     public static async addUser(req: Request, res: Response, next: NextFunction): Promise<void> {
         const userBo = UserService.getBo(req);
         res.data = await userBo.addUser(req.body);

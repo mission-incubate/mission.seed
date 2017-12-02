@@ -2,7 +2,7 @@ import * as SequelizeStatic from 'sequelize';
 import { DataTypes, Sequelize } from 'sequelize';
 import * as i from './interface';
 
-export default function(sequelize: Sequelize, dataTypes: DataTypes):
+export default function (sequelize: Sequelize, dataTypes: DataTypes):
     SequelizeStatic.Model<i.UserInstance, i.UserAttributes> {
     const User = sequelize.define<i.UserInstance, i.UserAttributes>('User', {
         Id: { type: dataTypes.BIGINT, field: 'UserId', primaryKey: true, autoIncrement: true },
@@ -72,12 +72,8 @@ export default function(sequelize: Sequelize, dataTypes: DataTypes):
             },
         });
 
-    (User as any).associate =  (models: Models) => {
-        User.belongsTo(models.Organization);
-        User.belongsTo(models.Facility);
-        User.belongsTo(models.Department);
-        User.belongsTo(models.Department);
-        User.belongsTo(models.Speciality);
+    (User as any).associate = (models: Models) => {
+        // User.belongsTo(models.Organization);
     };
 
     return User;
