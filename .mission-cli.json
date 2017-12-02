@@ -1,6 +1,8 @@
 {
   "name": "mission.seed",
   "tsconfig": "tsconfig.json",
+  "testTsconfig": "test.tsconfig.json",
+  "main": "index.ts",
   "env": {
     "DATABASE_DIALECT": "mysql",
     "DATABASE_HOST_NAME": "localhost",

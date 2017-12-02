@@ -1,5 +1,5 @@
 import {
-    ApplicationRoutes, BoFactory, GetRouter, NextFunction, Request, Response, Routable, Router, Wrap,
+    BoFactory, GetRouter, NextFunction, Request, Response, Router, Wrap,
 } from 'mission.core';
 import * as passport from 'passport';
 import * as local from 'passport-local';

@@ -7,7 +7,8 @@ export const SessionConfig: SessionOptions = {
         maxAge: Number(process.env.SESSION_MAX_AGE),
         secure: WebConfig.isHttpsEnabled,
     },
-    resave: false,
-    saveUninitialized: true,
+    resave: true,
+    saveUninitialized: false,
+    rolling: true,
     secret: process.env.SESSION_SECRET || 'mission.io',
 };
