@@ -1,6 +1,6 @@
 import { Bootstrap } from './bootstrap';
 export const server = new Bootstrap().server;
-import { AppRouter } from './modules/routes';
+import { AppRouter } from './routes';
 // server.addStaticFileRouting(this.config.webBasePath, __dirname + this.config.webBasePath,
 // this.config.staticFileConfig);
 // server.addStaticFileRouting(this.config.docsBasepath, __dirname + this.config.docsBasepath,

@@ -1,6 +1,7 @@
 import 'mocha';
 import * as supertest from 'supertest';
-import { server } from '../../../index';
+// import { server } from '../../../index';
+const server = {} as any;
 const agent = supertest.agent(server.app);
 
 describe('/auth service', () => {
