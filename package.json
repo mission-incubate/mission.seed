@@ -36,9 +36,9 @@
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
-    "@types/chai": "^4.0.6",
+    "@types/chai": "^4.0.10",
     "@types/connect-redis": "0.0.7",
-    "@types/jsonwebtoken": "^7.2.3",
+    "@types/jsonwebtoken": "^7.2.4",
     "@types/mocha": "^2.2.44",
     "@types/passport-jwt": "^3.0.0",
     "@types/passport-local": "^1.0.32",

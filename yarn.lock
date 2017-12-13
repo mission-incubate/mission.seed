@@ -25,9 +25,9 @@
   dependencies:
     "@types/node" "*"
 
-"@types/chai@^4.0.6":
-  version "4.0.6"
-  resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.0.6.tgz#9cb5a7fb7dd83be0cfcaafdbd95a2b5dd351762f"
+"@types/chai@^4.0.10":
+  version "4.0.10"
+  resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.0.10.tgz#0eb222c7353adde8e0980bea04165d4d3b6afef3"
 
 "@types/connect-redis@0.0.7":
   version "0.0.7"
@@ -117,9 +117,9 @@
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@types/jsonpath/-/jsonpath-0.2.0.tgz#13c62db22a34d9c411364fac79fd374d63445aa1"
 
-"@types/jsonwebtoken@^7.2.3":
-  version "7.2.3"
-  resolved "https://registry.yarnpkg.com/@types/jsonwebtoken/-/jsonwebtoken-7.2.3.tgz#483c8f39945e1e6d308dcc51fd4aeca5208d4dca"
+"@types/jsonwebtoken@^7.2.4":
+  version "7.2.4"
+  resolved "https://registry.yarnpkg.com/@types/jsonwebtoken/-/jsonwebtoken-7.2.4.tgz#d2fa8a0a0e647d766a09519d582e9834b498c798"
   dependencies:
     "@types/node" "*"
 
