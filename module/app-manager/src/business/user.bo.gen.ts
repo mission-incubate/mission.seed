@@ -2,7 +2,7 @@ import { ApiRequest, BaseRequest } from 'mission.common';
 import { AppIncludes } from 'mission.core';
 import * as SStatic from 'sequelize';
 
-import { AppBaseBo } from '../../../common';
+import { AppBaseBo } from 'mission.seed.common';
 import { UserFilter } from '../common';
 import { UserAttributes, UserInstance } from '../model/interface';
 

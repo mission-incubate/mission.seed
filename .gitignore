@@ -3,3 +3,4 @@ npm-debug.log
 build
 test/**/*.*
 .env
+v8-compile-cache*
