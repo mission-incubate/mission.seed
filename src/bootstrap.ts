@@ -10,7 +10,9 @@ export class Bootstrap {
         const logger = LoggerFactory.getLogger(LoggerConfig.ExceptionLoggerConfig);
         const startupLogger = LoggerFactory.getLogger(LoggerConfig.StartUpLoggerConfig);
         Paginator.init(Number(process.env.APP_DEFAULT_PAGE_SIZE));
-        const modelPattern = join(__dirname, 'modules', '**/*.model.js');
+        const modelPattern = [
+            join(__dirname, '../../node_modules/mission.seed.*', '**/*.model.js'),
+        ];
         Repository.init(DbConfig, modelPattern, startupLogger);
         const server = new WebServer(WebConfig, startupLogger);
         server.errorHandler = (err: Error, req: Request, res: Response, next: NextFunction): void => {

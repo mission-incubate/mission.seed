@@ -8,7 +8,7 @@ export const DbConfig: Options = {
     logging: false,
     port: Number(process.env.DATABASE_PORT) || -1,
     timezone: process.env.DATABASE_TIME_ZONE || '+12:00',
-    operatorsAliases: false,
+    operatorsAliases: Boolean(process.env.DATABASE_OPERATORS_ALIASES || false),
     password: process.env.DATABASE_PASSWORD || '',
     username: process.env.DATABASE_USER_NAME || '',
 };

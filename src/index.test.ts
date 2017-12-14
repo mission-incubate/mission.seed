@@ -1,2 +1,2 @@
 
-import './modules/app-manager/test';
+import 'mission.seed.app-manager/test';

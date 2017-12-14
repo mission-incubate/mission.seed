@@ -13,6 +13,18 @@
     "DATABASE_TIMEZONE": "+5:30",
     "DATABASE_OPERATORS_ALIASES": false
   },
+  "module": [
+    {
+      "id": 0,
+      "name": "mission.seed.common",
+      "tsconfig": "tsconfig.json"
+    },
+    {
+      "id": 1,
+      "name": "mission.seed.app-manager",
+      "tsconfig": "tsconfig.json"
+    }
+  ],
   "task": [
     {
       "command": "echo success",
