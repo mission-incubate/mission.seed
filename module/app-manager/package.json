@@ -2,8 +2,8 @@
   "name": "mission.seed.app-manager",
   "version": "1.0.0",
   "description": "",
-  "main": "./bin/service/index",
-  "types": "./bin/service/index.d",
+  "main": "./bin/index.js",
+  "types": "./bin/index.d.ts",
   "scripts": {
     "lint": "tslint -p tsconfig.json",
     "prebuild": "rimraf bin && npm run lint",
