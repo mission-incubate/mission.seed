@@ -2,11 +2,11 @@
   "name": "@mission.seed/app-manager",
   "version": "1.0.0",
   "description": "",
-  "main": "./bin/index.js",
-  "types": "./bin/index.d.ts",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
     "lint": "tslint -p tsconfig.json",
-    "prebuild": "rimraf bin && npm run lint",
+    "prebuild": "rimraf lib && npm run lint",
     "build": "tsc -p tsconfig.json"
   },
   "author": "Natarajan Ganapathi",
