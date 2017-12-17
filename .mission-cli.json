@@ -13,16 +13,26 @@
     "DATABASE_TIMEZONE": "+5:30",
     "DATABASE_OPERATORS_ALIASES": false
   },
-  "module": [
+  "modules": [
     {
       "id": 0,
-      "name": "mission.seed.common",
-      "tsconfig": "tsconfig.json"
+      "name": "common",
+      "tsconfig": "tsconfig.json",
+      "path": "module/common"
     },
     {
       "id": 1,
-      "name": "mission.seed.app-manager",
-      "tsconfig": "tsconfig.json"
+      "name": "app-manager",
+      "tsconfig": "tsconfig.json",
+      "path": "module/app-manager"
+    }
+  ],
+  "sdk": [
+    {
+      "id": 0,
+      "name": "app-manager.sdk",
+      "tsconfig": "tsconfig.json",
+      "path": "module/app-manager"
     }
   ],
   "task": [
