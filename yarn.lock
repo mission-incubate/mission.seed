@@ -25,9 +25,9 @@
   dependencies:
     "@types/node" "*"
 
-"@types/chai@^4.0.10":
-  version "4.0.10"
-  resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.0.10.tgz#0eb222c7353adde8e0980bea04165d4d3b6afef3"
+"@types/chai@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.1.0.tgz#d9008fa4c06f6801f93396d121f0227cd4244ac6"
 
 "@types/connect-redis@0.0.7":
   version "0.0.7"
@@ -90,6 +90,14 @@
     "@types/express-serve-static-core" "*"
     "@types/serve-static" "*"
 
+"@types/express@^4.11.0":
+  version "4.11.0"
+  resolved "https://registry.yarnpkg.com/@types/express/-/express-4.11.0.tgz#234d65280af917cb290634b7a8d6bcac24aecbad"
+  dependencies:
+    "@types/body-parser" "*"
+    "@types/express-serve-static-core" "*"
+    "@types/serve-static" "*"
+
 "@types/geojson@^1.0.0":
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@types/geojson/-/geojson-1.0.6.tgz#3e02972728c69248c2af08d60a48cbb8680fffdf"
@@ -122,15 +130,19 @@
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@types/jsonpath/-/jsonpath-0.2.0.tgz#13c62db22a34d9c411364fac79fd374d63445aa1"
 
-"@types/jsonwebtoken@^7.2.4":
-  version "7.2.4"
-  resolved "https://registry.yarnpkg.com/@types/jsonwebtoken/-/jsonwebtoken-7.2.4.tgz#d2fa8a0a0e647d766a09519d582e9834b498c798"
+"@types/jsonwebtoken@^7.2.5":
+  version "7.2.5"
+  resolved "https://registry.yarnpkg.com/@types/jsonwebtoken/-/jsonwebtoken-7.2.5.tgz#413159d570ec45fc3e7da7ea3f7bca6fb9300e72"
   dependencies:
     "@types/node" "*"
 
-"@types/lodash@*", "@types/lodash@^4.14.86", "@types/lodash@^4.14.89":
+"@types/lodash@*", "@types/lodash@^4.14.86":
   version "4.14.89"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.89.tgz#dd2114403d653a45c3d2f0cae1599949b99a5a3a"
+
+"@types/lodash@^4.14.92":
+  version "4.14.92"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.92.tgz#6e3cb0b71a1e12180a47a42a744e856c3ae99a57"
 
 "@types/mime@*":
   version "2.0.0"
@@ -140,13 +152,21 @@
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.1.tgz#b683eb60be358304ef146f5775db4c0e3696a550"
 
-"@types/mocha@^2.2.44":
-  version "2.2.44"
-  resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-2.2.44.tgz#1d4a798e53f35212fd5ad4d04050620171cd5b5e"
+"@types/mocha@^2.2.46":
+  version "2.2.46"
+  resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-2.2.46.tgz#b04713f7759d1cf752effdaae7b3969e285ebc16"
 
-"@types/mongodb@^2.2.16", "@types/mongodb@^2.2.17":
+"@types/mongodb@^2.2.16":
   version "2.2.17"
   resolved "https://registry.yarnpkg.com/@types/mongodb/-/mongodb-2.2.17.tgz#cc44e83de8be79989dc5dce6898862cf5c8a0b52"
+  dependencies:
+    "@types/bson" "*"
+    "@types/events" "*"
+    "@types/node" "*"
+
+"@types/mongodb@^2.2.18":
+  version "2.2.18"
+  resolved "https://registry.yarnpkg.com/@types/mongodb/-/mongodb-2.2.18.tgz#6b62056c081c9bba42530c831cffb5da4e74804c"
   dependencies:
     "@types/bson" "*"
     "@types/events" "*"
@@ -164,9 +184,13 @@
   dependencies:
     "@types/express" "*"
 
-"@types/node@*", "@types/node@^8.0.53", "@types/node@^8.5.1":
+"@types/node@*", "@types/node@^8.0.53":
   version "8.5.1"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.5.1.tgz#4ec3020bcdfe2abffeef9ba3fbf26fca097514b5"
+
+"@types/node@^8.5.7":
+  version "8.5.8"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.5.8.tgz#92509422653f10e9c0ac18d87e0610b39f9821c7"
 
 "@types/nodemailer-direct-transport@*":
   version "1.0.31"
@@ -232,9 +256,22 @@
   dependencies:
     "@types/express" "*"
 
-"@types/redis@*", "@types/redis@^2.8.1", "@types/redis@^2.8.3":
+"@types/passport@^0.4.2":
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/@types/passport/-/passport-0.4.2.tgz#0374b3fb69834437ad5657442e5d9be16d9a8e82"
+  dependencies:
+    "@types/express" "*"
+
+"@types/redis@*", "@types/redis@^2.8.1":
   version "2.8.3"
   resolved "https://registry.yarnpkg.com/@types/redis/-/redis-2.8.3.tgz#773bb60690c6f85eafa96d6c92cdee5f0695f97d"
+  dependencies:
+    "@types/events" "*"
+    "@types/node" "*"
+
+"@types/redis@^2.8.4":
+  version "2.8.4"
+  resolved "https://registry.yarnpkg.com/@types/redis/-/redis-2.8.4.tgz#9f9e78e4dce90ad032aef23a32bceafaadb3dce6"
   dependencies:
     "@types/events" "*"
     "@types/node" "*"
@@ -243,9 +280,24 @@
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/@types/reflect-metadata/-/reflect-metadata-0.0.5.tgz#9c042bfa9803d577aad4f57dfbca4b7cae4286fe"
 
+"@types/reflect-metadata@0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@types/reflect-metadata/-/reflect-metadata-0.1.0.tgz#592805bdf6d63dd7229773218afeba37ac2eab16"
+  dependencies:
+    reflect-metadata "*"
+
 "@types/sequelize@^4.0.79":
   version "4.0.79"
   resolved "https://registry.yarnpkg.com/@types/sequelize/-/sequelize-4.0.79.tgz#74c366407a978e493e70d7cea3d80c681aed15c0"
+  dependencies:
+    "@types/bluebird" "*"
+    "@types/continuation-local-storage" "*"
+    "@types/lodash" "*"
+    "@types/validator" "*"
+
+"@types/sequelize@^4.27.0":
+  version "4.27.1"
+  resolved "https://registry.yarnpkg.com/@types/sequelize/-/sequelize-4.27.1.tgz#1ce2a759a7ceb6d5b30badb01dcdeaa9332e9b58"
   dependencies:
     "@types/bluebird" "*"
     "@types/continuation-local-storage" "*"
@@ -831,6 +883,13 @@ connect-redis@^3.3.2:
     debug "^3.1.0"
     redis "^2.1.0"
 
+connect-redis@^3.3.3:
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/connect-redis/-/connect-redis-3.3.3.tgz#0fb8f370192f62da75ec7a9507807599fbe15b37"
+  dependencies:
+    debug "^3.1.0"
+    redis "^2.1.0"
+
 console-control-strings@^1.0.0, console-control-strings@~1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/console-control-strings/-/console-control-strings-1.1.0.tgz#3d7cf4464db6446ea644bf4b39507f9851008e8e"
@@ -940,6 +999,13 @@ dashify@^0.2.0:
 deasync@^0.1.11:
   version "0.1.11"
   resolved "https://registry.yarnpkg.com/deasync/-/deasync-0.1.11.tgz#3d1f228a2fecf4a1b359da2e636889942f8bf14c"
+  dependencies:
+    bindings "~1.2.1"
+    nan "^2.0.7"
+
+deasync@^0.1.12:
+  version "0.1.12"
+  resolved "https://registry.yarnpkg.com/deasync/-/deasync-0.1.12.tgz#0159492a4133ab301d6c778cf01e74e63b10e549"
   dependencies:
     bindings "~1.2.1"
     nan "^2.0.7"
@@ -2031,7 +2097,7 @@ mission.cli@0.0.1-alpha.5:
     table "^4.0.2"
     touch "^3.1.0"
 
-mission.common@0.0.1-beta.2, mission.common@^0.0.1-beta.2:
+mission.common@0.0.1-beta.2:
   version "0.0.1-beta.2"
   resolved "https://registry.yarnpkg.com/mission.common/-/mission.common-0.0.1-beta.2.tgz#e53d26791d2c7710116c5676827733789281e6a0"
 
@@ -2095,9 +2161,9 @@ mission.core@0.0.1-beta.13:
     winston-daily-rotate-file "^1.7.2"
     xlsx "^0.11.11"
 
-mission.core@^0.0.1-beta.14:
-  version "0.0.1-beta.14"
-  resolved "https://registry.yarnpkg.com/mission.core/-/mission.core-0.0.1-beta.14.tgz#3a444d10dfe0f3fc966759cb47c1432e91fba28e"
+mission.core@^0.0.1-beta.16:
+  version "0.0.1-beta.16"
+  resolved "https://registry.yarnpkg.com/mission.core/-/mission.core-0.0.1-beta.16.tgz#af3564753187a43333e11e0eb7ddd6734c5e0eeb"
   dependencies:
     "@types/body-parser" "^1.16.8"
     "@types/bwip-js" "^1.1.4"
@@ -2106,31 +2172,31 @@ mission.core@^0.0.1-beta.14:
     "@types/cors" "^2.8.3"
     "@types/dotenv" "^4.0.2"
     "@types/elasticsearch" "^5.0.19"
-    "@types/express" "^4.0.39"
+    "@types/express" "^4.11.0"
     "@types/glob" "^5.0.34"
     "@types/handlebars" "^4.0.36"
     "@types/helmet" "0.0.37"
     "@types/html-pdf" "^2.1.2"
     "@types/jsonpath" "^0.2.0"
-    "@types/lodash" "^4.14.89"
-    "@types/mongodb" "^2.2.17"
+    "@types/lodash" "^4.14.92"
+    "@types/mongodb" "^2.2.18"
     "@types/morgan" "^1.7.35"
     "@types/multer" "^1.3.6"
-    "@types/node" "^8.5.1"
+    "@types/node" "^8.5.7"
     "@types/nodemailer" "^4.3.1"
     "@types/nodemailer-smtp-transport" "^2.7.4"
-    "@types/passport" "^0.4.1"
+    "@types/passport" "^0.4.2"
     "@types/passport-local" "^1.0.32"
-    "@types/redis" "^2.8.3"
-    "@types/reflect-metadata" "0.0.5"
-    "@types/sequelize" "^4.0.79"
+    "@types/redis" "^2.8.4"
+    "@types/reflect-metadata" "0.1.0"
+    "@types/sequelize" "^4.27.0"
     "@types/winston" "^2.3.7"
     body-parser "^1.18.2"
     bwip-js "^1.6.2"
-    connect-redis "^3.3.2"
+    connect-redis "^3.3.3"
     cookie-parser "^1.4.3"
     cors "^2.8.4"
-    deasync "^0.1.11"
+    deasync "^0.1.12"
     dotenv "^4.0.0"
     elasticsearch "^14.0.0"
     express "^5.0.0-alpha.6"
@@ -2141,7 +2207,7 @@ mission.core@^0.0.1-beta.14:
     jsonpath "^1.0.0"
     lodash "^4.17.4"
     mission.common "0.0.1-beta.2"
-    mongodb "^3.0.0-rc0"
+    mongodb "^3.0.1"
     morgan "^1.9.0"
     multer "^1.3.0"
     mysql "^2.15.0"
@@ -2150,10 +2216,10 @@ mission.core@^0.0.1-beta.14:
     passport-local "^1.0.0"
     redis "^2.8.0"
     reflect-metadata "^0.1.10"
-    sequelize "^4.28.1"
+    sequelize "^4.29.0"
     winston "^2.4.0"
     winston-daily-rotate-file "^1.7.2"
-    xlsx "^0.11.13"
+    xlsx "^0.11.16"
 
 mkdirp@0.5.0:
   version "0.5.0"
@@ -2167,9 +2233,9 @@ mkdirp@0.5.1, mkdirp@0.x.x, "mkdirp@>=0.5 0", mkdirp@^0.5.1:
   dependencies:
     minimist "0.0.8"
 
-mocha@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/mocha/-/mocha-4.0.1.tgz#0aee5a95cf69a4618820f5e51fa31717117daf1b"
+mocha@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/mocha/-/mocha-4.1.0.tgz#7d86cfbcf35cb829e2754c32e17355ec05338794"
   dependencies:
     browser-stdout "1.3.0"
     commander "2.11.0"
@@ -2199,9 +2265,9 @@ mongodb-core@2.1.17:
     bson "~1.0.4"
     require_optional "~1.0.0"
 
-mongodb-core@3.0.0-rc0:
-  version "3.0.0-rc0"
-  resolved "https://registry.yarnpkg.com/mongodb-core/-/mongodb-core-3.0.0-rc0.tgz#d31a94fb056b90df2c81a24f3176160eaf767f07"
+mongodb-core@3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/mongodb-core/-/mongodb-core-3.0.1.tgz#ff6dc36ee96ff596953d80a6840d6731bc92efed"
   dependencies:
     bson "~1.0.4"
     require_optional "^1.0.1"
@@ -2214,11 +2280,11 @@ mongodb@^2.2.33:
     mongodb-core "2.1.17"
     readable-stream "2.2.7"
 
-mongodb@^3.0.0-rc0:
-  version "3.0.0-rc0"
-  resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-3.0.0-rc0.tgz#8d87c762978048b2c6a100a9034371350606b846"
+mongodb@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-3.0.1.tgz#278ee8006257ec22798594a6259546825d6de1b2"
   dependencies:
-    mongodb-core "3.0.0-rc0"
+    mongodb-core "3.0.1"
 
 morgan@^1.9.0:
   version "1.9.0"
@@ -2659,7 +2725,7 @@ readable-stream@2.2.7:
     string_decoder "~1.0.0"
     util-deprecate "~1.0.1"
 
-readable-stream@2.3.2:
+readable-stream@2.3.2, readable-stream@^2.0.0, readable-stream@^2.0.5:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.2.tgz#5a04df05e4f57fe3f0dc68fdd11dc5c97c7e6f4d"
   dependencies:
@@ -2671,7 +2737,7 @@ readable-stream@2.3.2:
     string_decoder "~1.0.0"
     util-deprecate "~1.0.1"
 
-readable-stream@2.3.3, readable-stream@^2.0.0, readable-stream@^2.0.5, readable-stream@^2.0.6, readable-stream@^2.1.4, readable-stream@^2.2.2:
+readable-stream@2.3.3, readable-stream@^2.0.6, readable-stream@^2.1.4, readable-stream@^2.2.2:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.3.tgz#368f2512d79f9d46fdfc71349ae7878bbc1eb95c"
   dependencies:
@@ -2719,7 +2785,7 @@ referrer-policy@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/referrer-policy/-/referrer-policy-1.1.0.tgz#35774eb735bf50fb6c078e83334b472350207d79"
 
-reflect-metadata@^0.1.10:
+reflect-metadata@*, reflect-metadata@^0.1.10:
   version "0.1.10"
   resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.10.tgz#b4f83704416acad89988c9b15635d47e03b9344a"
 
@@ -2873,9 +2939,31 @@ seq-queue@0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/seq-queue/-/seq-queue-0.0.5.tgz#d56812e1c017a6e4e7c3e3a37a1da6d78dd3c93e"
 
-sequelize@^4.24.0, sequelize@^4.28.1:
+sequelize@^4.24.0:
   version "4.28.1"
   resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-4.28.1.tgz#1ca05adcb413309219583a1895070d48c3366b3d"
+  dependencies:
+    bluebird "^3.4.6"
+    cls-bluebird "^2.0.1"
+    debug "^3.0.0"
+    depd "^1.1.0"
+    dottie "^2.0.0"
+    generic-pool "^3.1.8"
+    inflection "1.12.0"
+    lodash "^4.17.1"
+    moment "^2.13.0"
+    moment-timezone "^0.5.4"
+    retry-as-promised "^2.3.1"
+    semver "^5.0.1"
+    terraformer-wkt-parser "^1.1.2"
+    toposort-class "^1.0.1"
+    uuid "^3.0.0"
+    validator "^9.1.0"
+    wkx "^0.4.1"
+
+sequelize@^4.29.0:
+  version "4.31.0"
+  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-4.31.0.tgz#6826bc0e8d0b31571f927ca89d956999e612fa7c"
   dependencies:
     bluebird "^3.4.6"
     cls-bluebird "^2.0.1"
@@ -3405,9 +3493,21 @@ x-xss-protection@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/x-xss-protection/-/x-xss-protection-1.0.0.tgz#898afb93869b24661cf9c52f9ee8db8ed0764dd9"
 
-xlsx@^0.11.11, xlsx@^0.11.13:
+xlsx@^0.11.11:
   version "0.11.13"
   resolved "https://registry.yarnpkg.com/xlsx/-/xlsx-0.11.13.tgz#20f87f632b282935dbd52240ab7b82d759745de0"
+  dependencies:
+    adler-32 "~1.1.0"
+    cfb "~1.0.1"
+    codepage "~1.11.0"
+    commander "~2.11.0"
+    crc-32 "~1.1.1"
+    exit-on-epipe "~1.0.1"
+    ssf "~0.10.1"
+
+xlsx@^0.11.16:
+  version "0.11.17"
+  resolved "https://registry.yarnpkg.com/xlsx/-/xlsx-0.11.17.tgz#507461fb9783ad0afe1cf751aeb59956e93232da"
   dependencies:
     adler-32 "~1.1.0"
     cfb "~1.0.1"
