@@ -14,7 +14,7 @@
     "noUnusedLocals": true
   },
   "exclude": [
-    "module",
+    "app",
     "node_modules",
     "**/*.test.ts"
   ]
