@@ -2,7 +2,7 @@
   "name": "mission.seed",
   "tsconfig": "tsconfig.json",
   "testTsconfig": "test.tsconfig.json",
-  "templatePath": "/tpl",
+  "templatePath": "",
   "main": "index.ts",
   "env": {
     "DATABASE_DIALECT": "mysql",
@@ -19,21 +19,27 @@
       "id": 0,
       "name": "common",
       "tsconfig": "tsconfig.json",
+      "testTsconfig": "test.tsconfig.json",
       "path": "app/common"
     },
     {
       "id": 1,
       "name": "app-manager",
       "tsconfig": "tsconfig.json",
+      "testTsconfig": "test.tsconfig.json",
       "path": "app/app-manager"
     }
   ],
   "sdk": [
     {
       "id": 0,
-      "name": "app-manager.sdk",
+      "name": "app-manager-sdk",
       "tsconfig": "tsconfig.json",
-      "path": "sdk/app-manager"
+      "testTsconfig": "test.tsconfig.json",
+      "path": "app/app-manager-sdk",
+      "dependency": [
+        "app-manager"
+      ]
     }
   ],
   "task": [
