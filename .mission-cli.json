@@ -14,20 +14,21 @@
     "DATABASE_TIMEZONE": "+5:30",
     "DATABASE_OPERATORS_ALIASES": false
   },
+  "modulesBasePath": "app",
   "modules": [
     {
       "id": 0,
       "name": "common",
       "tsconfig": "tsconfig.json",
       "testTsconfig": "test.tsconfig.json",
-      "path": "app/common"
+      "path": "common"
     },
     {
       "id": 1,
       "name": "app-manager",
       "tsconfig": "tsconfig.json",
       "testTsconfig": "test.tsconfig.json",
-      "path": "app/app-manager"
+      "path": "app-manager"
     }
   ],
   "sdk": [
@@ -36,7 +37,7 @@
       "name": "app-manager-sdk",
       "tsconfig": "tsconfig.json",
       "testTsconfig": "test.tsconfig.json",
-      "path": "app/app-manager-sdk",
+      "path": "app-manager-sdk",
       "dependency": [
         "app-manager"
       ]

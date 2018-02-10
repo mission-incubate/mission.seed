@@ -1,8 +1,7 @@
 import { ApiResponse, IBaseDto, Paginator } from 'mission.common';
 import { LoggerFactory, NextFunction, Repository, Request, Response, WebServer } from 'mission.core';
-import { join } from 'path';
 
-import { DbConfig, LoggerConfig, WebConfig } from './config';
+import { DbConfig, LoggerConfig, ModelPatterns, WebConfig } from './config';
 
 export class Bootstrap {
     public server: WebServer;
@@ -10,10 +9,7 @@ export class Bootstrap {
         const logger = LoggerFactory.getLogger(LoggerConfig.ExceptionLoggerConfig);
         const startupLogger = LoggerFactory.getLogger(LoggerConfig.StartUpLoggerConfig);
         Paginator.init(Number(process.env.APP_DEFAULT_PAGE_SIZE));
-        const modelPattern = [
-            join(__dirname, '../../node_modules/mission.seed.*', '**/*.model.js'),
-        ];
-        Repository.init(DbConfig, modelPattern, startupLogger);
+        Repository.init(DbConfig, ModelPatterns, startupLogger);
         const server = new WebServer(WebConfig, startupLogger);
         server.errorHandler = (err: Error, req: Request, res: Response, next: NextFunction): void => {
             const msg = typeof err === 'string' ? err : err.message;
