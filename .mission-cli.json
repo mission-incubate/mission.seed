@@ -15,8 +15,8 @@
     "DATABASE_TIMEZONE": "+5:30",
     "DATABASE_OPERATORS_ALIASES": true
   },
-  "modulesBasePath": "app",
-  "modules": [
+  "appBasePath": "app",
+  "app": [
     {
       "id": 0,
       "name": "common",
