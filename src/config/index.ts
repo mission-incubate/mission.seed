@@ -1,3 +1,4 @@
+export * from './model.config';
 export * from './db.config';
 export * from './logger.config';
 export * from './static-file.config';
