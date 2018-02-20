@@ -4,10 +4,6 @@
   "description": "mission.io's Seed project",
   "main": "index.js",
   "scripts": {
-    "link.mac": "sh cmd/link.sh",
-    "link.win": "start cmd\\link",
-    "build.mac": "sh cmd/build.sh",
-    "build.win": "start cmd\\build",
     "lint": "tslint -p tsconfig.json",
     "prebuild": "rimraf build && npm run lint",
     "build": "tsc -p tsconfig.json",
