@@ -17,7 +17,8 @@
   },
   "enableScope": true,
   "appBasePath": "app",
-  "app": [{
+  "app": [
+    {
       "id": 0,
       "name": "common",
       "tsconfig": "tsconfig.json",
