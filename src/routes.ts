@@ -5,9 +5,7 @@ import * as passport from 'passport';
 
 import { RedisSessionConfig, SessionConfig } from './config';
 
-import '@mission.seed/app-manager';
-// import auth from './app-manager/service/auth-local.service';
-// import auth from './app-manager/service/auth-jwt.service';
+import './import';
 
 const RedisStore = redisStore(session);
 SessionConfig.store = new RedisStore(RedisSessionConfig);

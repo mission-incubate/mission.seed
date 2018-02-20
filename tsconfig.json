@@ -3,6 +3,7 @@
     "target": "es6",
     "module": "commonjs",
     "sourceMap": true,
+    "declaration": false,
     "outDir": "./build/server/",
     "strict": true,
     "noImplicitAny": true,
