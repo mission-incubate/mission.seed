@@ -8,5 +8,3 @@ docker-compose*
 README.md
 LICENSE
 .vscode
-v8-compile-cache*
-yarn-error.log

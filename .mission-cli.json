@@ -23,14 +23,20 @@
       "name": "common",
       "tsconfig": "tsconfig.json",
       "testTsconfig": "test.tsconfig.json",
-      "path": "common"
+      "path": "common",
+      "dependency": [],
+      "import": false
     },
     {
       "id": 1,
       "name": "app-manager",
       "tsconfig": "tsconfig.json",
       "testTsconfig": "test.tsconfig.json",
-      "path": "app-manager"
+      "path": "app-manager",
+      "dependency": [
+        "common"
+      ],
+      "import": true
     }
   ],
   "sdk": [
