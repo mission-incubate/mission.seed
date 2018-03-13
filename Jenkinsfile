@@ -1,7 +1,7 @@
 pipeline {
   agent {
-    dockerfile {
-      filename 'dockerfile'
+    node {
+      label 'seed'
     }
     
   }
@@ -11,8 +11,5 @@ pipeline {
         sh 'npm run build'
       }
     }
-  }
-  environment {
-    env = 'dev'
   }
 }
