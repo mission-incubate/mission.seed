@@ -15,6 +15,7 @@
 
 ### Run
 `docker run -it -p 3000:3000 mission.seed` - Keep the Container after exit
+
 `docker run -it -rm -p 3000:3000 mission.seed` - Kill the Container after exit
 
 ### List running instance

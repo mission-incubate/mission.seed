@@ -8,7 +8,8 @@
     "prebuild": "rimraf build && npm run lint",
     "build": "tsc -p tsconfig.json",
     "pretest": "rimraf test && tsc -p test.tsconfig.json",
-    "test": "./node_modules/.bin/mocha --reporter spec"
+    "test": "./node_modules/.bin/mocha --reporter spec",
+    "start": ""
   },
   "keywords": [
     "mission",
@@ -28,26 +29,28 @@
   "dependencies": {
     "connect-redis": "^3.3.3",
     "express-session": "^1.15.6",
-    "helmet": "^3.11.0",
-    "jsonwebtoken": "^8.1.1",
-    "mission.core": "^0.0.1-beta.17",
-    "mysql2": "^1.5.2",
-    "passport-jwt": "^3.0.1",
-    "passport-local": "^1.0.0"
+    "helmet": "^3.12.1",
+    "jsonwebtoken": "^8.2.2",
+    "mission.common": "0.0.1-beta.4",
+    "mission.core": "^0.0.1-beta.19",
+    "mysql2": "^1.5.3",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "pm2": "^2.10.4"
   },
   "devDependencies": {
-    "@types/chai": "^4.1.2",
+    "@types/chai": "^4.1.3",
     "@types/connect-redis": "0.0.7",
-    "@types/jsonwebtoken": "^7.2.5",
-    "@types/mocha": "^2.2.48",
+    "@types/jsonwebtoken": "^7.2.7",
+    "@types/mocha": "^5.2.1",
     "@types/passport-jwt": "^3.0.1",
-    "@types/passport-local": "^1.0.32",
-    "@types/sequelize": "^4.27.6",
+    "@types/passport-local": "^1.0.33",
+    "@types/sequelize": "^4.27.20",
     "@types/supertest": "^2.0.4",
     "chai": "^4.1.2",
-    "mission.cli": "0.0.1-alpha.9",
-    "mocha": "^5.0.1",
-    "supertest": "^3.0.0",
-    "typescript": "^2.7.2"
+    "mission.cli": "0.0.1-alpha.11",
+    "mocha": "^5.2.0",
+    "supertest": "^3.1.0",
+    "typescript": "^2.9.1"
   }
 }
