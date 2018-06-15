@@ -4,7 +4,7 @@
     "module": "commonjs",
     "sourceMap": true,
     "declaration": false,
-    "outDir": "./build/server/",
+    "outDir": "./build/",
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
@@ -15,7 +15,7 @@
     "noUnusedLocals": true
   },
   "exclude": [
-    "app",
+    "service",
     "node_modules",
     "**/*.test.ts"
   ]
