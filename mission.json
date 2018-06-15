@@ -16,7 +16,7 @@
     "DATABASE_OPERATORS_ALIASES": true
   },
   "enableScope": true,
-  "appBasePath": "app",
+  "appBasePath": "service",
   "app": [
     {
       "id": 0,
