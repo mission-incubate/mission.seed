@@ -5,22 +5,24 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Program",
+            "name": "Debug App",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceRoot}/build/server/index.js",
+            "program": "${workspaceRoot}/build/index.js",
             "cwd": "${workspaceRoot}",
             "outFiles": [],
             "sourceMaps": true,
             "stopOnEntry": true
         },
         {
-            "name": "Attach to Process",
             "type": "node",
-            "request": "attach",
-            "port": 9229,
-            "outFiles": [],
-            "sourceMaps": true
+            "request": "launch",
+            "name": "Debug MIO",
+            "program": "${workspaceRoot}/node_modules/mission.cli/build/cli.js",
+            "stopOnEntry": true,
+            "args": [
+                "build"
+            ]
         }
     ]
 }
