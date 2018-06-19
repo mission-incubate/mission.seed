@@ -17,7 +17,7 @@
   },
   "enableScope": true,
   "appBasePath": "service",
-  "app": [
+  "service": [
     {
       "id": 0,
       "name": "common",
