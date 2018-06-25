@@ -1,8 +1,21 @@
-FROM node:8.9-alpine
+FROM keymetrics/pm2:latest-alpine
+
 ENV NODE_ENV production
 WORKDIR /usr/src/app
-COPY ["package.json", "package-lock.json*", "./"]
-RUN npm install --production --silent && mv node_modules ../
-COPY . .
+
+# Bundle APP files
+COPY ["package.json", "package-lock.json*", "pm2.json", ".env",  "./"]
+COPY build build/
+
+# Install app dependencies
+ENV NPM_CONFIG_LOGLEVEL warn
+RUN npm install --production
+
+# Show current folder structure in logs
+RUN ls -al 
+#-R
+
+# Expose the listening port of your app
 EXPOSE 3000
-CMD node ./build/index.js
+
+CMD [ "pm2-runtime", "start", "pm2.json" ]

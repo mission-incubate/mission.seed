@@ -34,6 +34,7 @@
     "mission.common": "0.0.1-beta.4",
     "mission.core": "^0.0.1-beta.19",
     "mysql2": "^1.5.3",
+    "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
     "pm2": "^2.10.4"
