@@ -1,7 +1,7 @@
 {
   "name": "@mission.seed/common",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is common module for all services",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
@@ -10,5 +10,9 @@
     "build": "tsc -p tsconfig.json"
   },
   "author": "Natarajan Ganapathi",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "url": "",
+    "type": "git"
+  }
 }
