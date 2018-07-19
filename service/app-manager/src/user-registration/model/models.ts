@@ -1,8 +1,8 @@
-import * as SequelizeStatic from 'sequelize';
+import { Model } from 'mission.core';
 import * as i from './interface';
 
 declare global {
     interface Models {
-        User: SequelizeStatic.Model<i.UserInstance, i.UserAttributes>;
+        User: Model<i.UserInstance, i.UserAttributes>;
     }
 }

@@ -1,6 +1,4 @@
-import { ApiRequest, BaseRequest } from 'mission.common';
-import { AppIncludes } from 'mission.core';
-import * as SStatic from 'sequelize';
+import { ApiRequest, AppIncludes, BaseRequest, Model } from 'mission.core';
 
 import { AppBaseBo } from '@mission.seed/common';
 import { UserFilter } from '../common';
@@ -30,7 +28,7 @@ export class UserBoGen extends AppBaseBo<UserInstance, UserAttributes> {
         return result;
     }
 
-    public getModel(): SStatic.Model<UserInstance, UserAttributes> {
+    public getModel(): Model<UserInstance, UserAttributes> {
         return super.models.User;
     }
 

@@ -6,6 +6,10 @@
     "jsRules": {},
     "rules": {
         "ban-types": true,
+        "max-line-length": [
+            true,
+            140
+        ],
         "interface-name": [
             true,
             "never-prefix"

@@ -50,6 +50,6 @@ export class Auth {
 }
 
 const router: Router = GetRouter();
-router.post('/' + Auth.login.name, passport.authenticate('local'), Wrap(Auth.login));
+router.post('/' + Auth.login.name, passport.authenticate('local') as any, Wrap(Auth.login));
 router.post('/' + Auth.logout.name, Wrap(Auth.logout));
 export default router;

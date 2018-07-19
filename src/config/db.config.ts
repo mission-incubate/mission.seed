@@ -1,4 +1,4 @@
-import { Options } from 'sequelize';
+import { Options } from 'mission.core';
 
 export const DbConfig: Options = {
     database: process.env.DATABASE_NAME || '',

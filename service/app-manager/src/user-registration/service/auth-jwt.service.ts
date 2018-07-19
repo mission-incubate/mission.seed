@@ -1,7 +1,5 @@
 import { sign } from 'jsonwebtoken';
-import {
-    BoFactory, GetRouter, NextFunction, Request, Response, Router, Wrap,
-} from 'mission.core';
+import { BoFactory, GetRouter, NextFunction, Request, RequestHandler, Response, Router, Wrap } from 'mission.core';
 import * as passport from 'passport';
 import { ExtractJwt, Strategy, StrategyOptions } from 'passport-jwt';
 
@@ -24,7 +22,7 @@ const ops: StrategyOptions = {
     secretOrKey: 'secretToken',
 };
 const strategy = new Strategy(ops, (jwt: { id: number }, done: Function) => {
-    const userBo = BoFactory.getBo(UserBo);
+    const userBo = BoFactory.getBo<UserBo>(UserBo);
     userBo.findOne({ where: { Id: jwt.id }, attributes: ['Id', 'UserName', 'Password'] })
         .then((user: UserInstance) => {
             let res: any = false;
@@ -66,6 +64,7 @@ export class Auth {
 
 const router: Router = GetRouter();
 router.post('/' + Auth.login.name, Wrap(Auth.login));
-router.use(passport.authenticate('jwt', { session: true }));
+const handler: RequestHandler = passport.authenticate('jwt', { session: true }) as any;
+router.use(handler);
 router.post('/' + Auth.logout.name, Wrap(Auth.logout));
 export default router;

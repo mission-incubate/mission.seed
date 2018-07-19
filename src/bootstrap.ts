@@ -1,4 +1,4 @@
-import { ApiResponse, IBaseDto, Paginator } from 'mission.common';
+import { ApiResponse, IBaseDto, Paginator } from 'mission.core';
 import { LoggerFactory, NextFunction, Repository, Request, Response, WebServer } from 'mission.core';
 
 import { DbConfig, LoggerConfig, ModelPatterns, WebConfig } from './config';

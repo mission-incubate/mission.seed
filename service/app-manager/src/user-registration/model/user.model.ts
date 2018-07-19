@@ -1,9 +1,7 @@
-import * as SequelizeStatic from 'sequelize';
-import { DataTypes, Sequelize } from 'sequelize';
+import { DataTypes, Model, Sequelize } from 'mission.core';
 import * as i from './interface';
 
-export default function (sequelize: Sequelize, dataTypes: DataTypes):
-    SequelizeStatic.Model<i.UserInstance, i.UserAttributes> {
+export default function (sequelize: Sequelize, dataTypes: DataTypes): Model<i.UserInstance, i.UserAttributes> {
     const User = sequelize.define<i.UserInstance, i.UserAttributes>('User', {
         Id: { type: dataTypes.BIGINT, field: 'UserId', primaryKey: true, autoIncrement: true },
         TitleId: { type: dataTypes.BIGINT, field: 'TitleId' },
@@ -76,5 +74,5 @@ export default function (sequelize: Sequelize, dataTypes: DataTypes):
         // User.belongsTo(models.Organization);
     };
 
-    return User;
+    return User as any; // Model.sync issue need to be fix sequelze team. - Types of property 'sync' are incompatible.
 }

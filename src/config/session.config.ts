@@ -1,4 +1,4 @@
-import { SessionOptions } from 'mission.core';
+import { SessionOptions } from 'express-session';
 import { WebConfig } from './web-server.config';
 
 export const SessionConfig: SessionOptions = {
